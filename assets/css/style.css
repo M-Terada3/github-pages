@@ -1,0 +1,20 @@
+
+.block {
+  width: 30%;
+  background-image: url("sample.jpg");
+}
+@media screen and (max-width: 1080px) {
+  .block {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .block {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .block {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
