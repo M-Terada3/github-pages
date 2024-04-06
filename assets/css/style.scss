@@ -1,41 +1,65 @@
-/*# sourceMappingURL=style.css.map */
-$pc: 1080px;
-$tab: 768px;
-$sp: 480px;
-
-@mixin pc {
-  @media screen and (max-width: ($pc)) {
-    @content;
-  }
+.l-wrap {
+  width: 100%;
 }
-
-@mixin tab {
-  @media screen and (max-width: ($tab)) {
-    @content;
-  }
+header {
+  background-color: #83c3ce;
 }
-
-@mixin sp {
-  @media screen and (max-width: ($sp)) {
-    @content;
-  }
+.l-header__menu ul {
+  display: flex;
+  justify-content: space-evenly;
 }
-.block {
-  width: 30%;
-  background-image: url('sample.jpg');
-
-  @include pc {
-    width: 50%;
-  }
-
-  @include tab {
-    width: 80%;
-  }
-
-  @include sp {
-    width: 100%;
-  }
+.l-header__menu li {
+  width: 25%;
+  text-align: center;
+  list-style-type: none;
+  padding-left: 0;
 }
-.test {
-  color: aqua;
+.l-header__menu li a {
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+}
+.l-header__contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.p-main__logo {
+  width: 16vw;
+  padding: 20px;
+}
+.p-search__contents {
+}
+.c-form1 {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #c1c1c1;
+  background-color: #fff;
+  margin-right: 30px;
+}
+.c-sbox1 {
+  width: 50vw;
+  border: none;
+  padding: 18px 40px 18px 20px;
+}
+.c-sbtn2 {
+  padding: 20px;
+}
+.c-sbtn2 img {
+  background: #7fbfff;
+  border: none;
+}
+.l-header__menu2 ul {
+  display: flex;
+  justify-content: center;
+}
+.l-header__menu2 li {
+  list-style-type: none;
+  position: relative;
+}
+.l-header__menu2 li a {
+  font-size: 1.3vw;
+  color: #fff;
+  text-decoration: none;
+  outline: none;
 }
