@@ -10,25 +10,54 @@
   <body>
     <div class="l-wrap">
       <header>
-        <nav class="l-header__menu">
-          <ul>
-            <li class="current">
-              <a href="">HOME</a>
-            </li>
-            <li>
-              <a href="">MENU</a>
-            </li>
-            <li>
-              <a href="">ONLINE SHOP</a>
-            </li>
-            <li>
-              <a href="">SHOP LIST</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="l-header__contents">
-          <img class="p-main__logo" src="./assets/img/main logo.png" />
-          <div>
+        <div class="l-sp__header">
+          <a
+            ><img
+              class="p-sp__headerLogo"
+              src="./assets/img/main logo.png"
+              alt="Felice"
+              width="120"
+              height="70"
+              class="imgauto"
+          /></a>
+        </div>
+        <p class="p-sp__phrase">
+          人にも地球にもやさしい<br />オーガニックカフェ
+        </p>
+        <div class="p-sp__hamburgerNav">
+          <a href="" class="hamburger">
+            <div class="p-hamburger__icon"><span></span><span></span></div>
+          </a>
+        </div>
+      </header>
+      <nav class="l-main__menu">
+        <ul>
+          <li class="current">
+            <a href="" class="p-sofia">HOME</a>
+          </li>
+          <li>
+            <a href="" class="p-sofia">MENU</a>
+          </li>
+          <li>
+            <a href="" class="p-sofia">ONLINE SHOP</a>
+          </li>
+          <li>
+            <a href="" class="p-sofia">SHOP LIST</a>
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <section class="l-main__area">
+          <div class="l-main__contents">
+            <a href=""
+              ><img
+                class="p-main__logo"
+                src="./assets/img/main logo.png"
+                alt="Felice"
+                width="200"
+                height="120"
+                class="imgauto"
+            /></a>
             <div class="p-search__contents">
               <form
                 class="c-form1"
@@ -51,29 +80,37 @@
                   value="検索"
                 />
               </form>
-            </div>
-            <div class="l-header__menu2">
-              <ul>
-                <li>
-                  <a href="">Feliceについて</a>
-                </li>
-                <li>
-                  <a href="">Feliceのこだわり</a>
-                </li>
-                <li>
-                  <a href="">ポイントを集めよう</a>
-                </li>
-                <li>
-                  <a href="">News一覧</a>
-                </li>
-              </ul>
+              <nav class="l-main__menu2">
+                <ul>
+                  <li>
+                    <a href="">Feliceについて</a>
+                  </li>
+                  <li>
+                    <a href="">Feliceのこだわり</a>
+                  </li>
+                  <li>
+                    <a href="">ポイントを集めよう</a>
+                  </li>
+                  <li>
+                    <a href="">News一覧</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
-        </div>
-      </header>
-      <main>
-        <div class="l-top__img">
+        </section>
+
+        <div class="p-pickUp__contents">
           <img src="./assets/img/top_img.jpg" />
+          <div class="p-pickUp__label"></div>
+          <div class="p-pickUp__Title"></div>
+        </div>
+        <div class="p-top__scroll">
+          <div class="p-top__scrollBtn--prev"></div>
+          <div class="p-top__scrollBtn--next"></div>
+          <div class="p-top__scrollDown">
+            <span class="p-sofia">scroll</span>
+          </div>
         </div>
       </main>
     </div>
