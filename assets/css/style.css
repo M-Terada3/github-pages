@@ -99,9 +99,9 @@ header {
 }
 
 .p-main__logo {
-  width: 43%;
+  width: 12.5vw;
   height: auto;
-  padding: 20px 0;
+  padding: 20px;
 }
 @media screen and (max-width: 768px) {
   .p-main__logo {
@@ -181,7 +181,7 @@ header {
   width: 90%;
 }
 
-.l-main__contents {
+.l-top__contents {
   display: flex;
   justify-content: space-between;
   align-items: center;
