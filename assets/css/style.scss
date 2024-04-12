@@ -17,7 +17,7 @@ img {
   width: 100%;
 }
 .l-wrap {
-  width: 100%;
+  min-height: 100vh;
 }
 header {
   display: flex;
@@ -96,11 +96,14 @@ header {
 .p-main__logo {
   width: 12.5vw;
   height: auto;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
 
   @include sp {
     display: none;
   }
+}
+.p-search__contents {
+  width: 50%;
 }
 .c-form1 {
   display: flex;
@@ -118,7 +121,7 @@ header {
   padding: 12px 40px 12px 20px;
 }
 .c-sbtn2 {
-  padding: 20px;
+  padding: 16px;
 }
 .c-sbtn2 img {
   border: none;
@@ -135,10 +138,10 @@ header {
 .l-main__menu2 li {
   list-style-type: none;
   position: relative;
-  padding: 0 2vw;
+  padding: 0 1.5vw;
 }
 .l-main__menu2 li a {
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   color: #fff;
   text-decoration: none;
   outline: none;
@@ -155,7 +158,6 @@ header {
   background: #fff;
 }
 .p-pickUp__contents {
-  // margin: 0 2.5vw;
   background: url(../../assets/img/header-color.jpg) no-repeat center / 1400px;
   background-position: top left;
   background-size: 100% 50%;
@@ -173,12 +175,61 @@ header {
     1400px;
   padding: 2vw 3vw 0 3vw;
 }
-.p-hotNews__icon {
-  width: 70px;
+.p-hotNews__title {
+  display: flex;
+  justify-content: center;
 }
-.p-news__img {
-  width: 300px;
+.p-hotNews__icon {
+  width: 10%;
+  height: 100%;
+  padding: 20px;
 }
 .p-news__list {
   display: flex;
+  flex-wrap: wrap;
+  padding: 4vw;
+}
+.p-news__img {
+  width: calc( 90% - 6px );
+  // margin: 0 auto;
+}
+.p-news__img img {
+  width: 100%;
+  object-fit: cover;
+}
+.p-news__list article {
+  width: 46%;
+  position: relative;
+  padding: 10px;
+}
+// .p-news__list article:nth-of-type(1) ::after {
+//   content: "";
+//   display: inline-block;
+//   width: 1px;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   background: gray;
+// }
+// .p-news__list article:nth-of-type(2) {
+//   border-bottom:  1px solid gray;
+// }
+.l-onlineShop__area {
+  display: flex;
+}
+.p-onlineShop__items {
+  display: flex;
+}
+.p-onlineShop__items li {
+  list-style-type: none;
+}
+.p-onlineShop__items li a {
+  font-size: 1.3vw;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+}
+.p-onlineShop__items--img {
+  width: 10vw;
 }
