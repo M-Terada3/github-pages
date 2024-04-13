@@ -23,7 +23,6 @@ header {
   display: flex;
   align-items: center;
   padding: 2.5vw;
-  width: var(--INNER_WIDTH);
 
   @include pc {
     display: none;
@@ -190,7 +189,7 @@ header {
   padding: 4vw;
 }
 .p-news__img {
-  width: calc( 90% - 6px );
+  width: calc(90% - 6px);
   // margin: 0 auto;
 }
 .p-news__img img {
