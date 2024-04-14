@@ -217,7 +217,7 @@ header {
 }
 
 .p-news__img {
-  width: calc(90% - 6px);
+  width: 100%;
 }
 
 .p-news__img img {
@@ -230,6 +230,13 @@ header {
   width: 46%;
   position: relative;
   padding: 10px;
+}
+
+.p-news__list article a {
+  font-size: 2vw;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
 }
 
 .l-onlineShop__area {
