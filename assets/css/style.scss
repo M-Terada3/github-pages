@@ -182,7 +182,7 @@ main {
   }
 }
 
-.l-pickUp {
+.p-pickUp {
   background: url(../../assets/img/header-color.jpg) no-repeat center / 1400px;
   background-position: top left;
   background-size: 100% 32%;
@@ -233,22 +233,24 @@ main {
     font-size: 1.5vw;
     padding: 30px;
   }
+
+  &__text ::before {
+    content: "";
+    display: inline-block;
+    background: #84c3cf;
+    aspect-ratio: 1 / 1;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    width: 27px;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+  }
+
+  &__text date {
+    font-size: 1vw;
+  }
 }
 
-.p-pickUp__text ::before {
-  content: "";
-  display: inline-block;
-  background: #84c3cf;
-  aspect-ratio: 1 / 1;
-  clip-path: polygon(100% 0, 0 100%, 100% 100%);
-  width: 27px;
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-}
-.p-pickUp__text date {
-  font-size: 1vw;
-}
 .l-mainTop {
   &__contents {
     display: flex;

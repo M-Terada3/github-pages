@@ -158,17 +158,17 @@ main {
   background: #fff;
 }
 
-.l-pickUp {
+.p-pickUp {
   background: url(../../assets/img/header-color.jpg) no-repeat center/1400px;
   background-position: top left;
   background-size: 100% 32%;
   position: relative;
 }
-.l-pickUp__contents {
+.p-pickUp__contents {
   margin: 0 80px;
   display: block;
 }
-.l-pickUp__label {
+.p-pickUp__label {
   width: 146px;
   padding: 20px 15px 0 0;
   position: absolute;
@@ -181,23 +181,23 @@ main {
   -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
           clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
-.l-pickUp__label span {
+.p-pickUp__label span {
   display: block;
   text-align: center;
   letter-spacing: 0.1em;
 }
-.l-pickUp__labelBox {
+.p-pickUp__labelBox {
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
 }
-.l-pickUp__contents img {
+.p-pickUp__contents img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.l-pickUp__text {
+.p-pickUp__text {
   letter-spacing: 0.1em;
   top: 60%;
   left: 53px;
@@ -208,7 +208,6 @@ main {
   font-size: 1.5vw;
   padding: 30px;
 }
-
 .p-pickUp__text ::before {
   content: "";
   display: inline-block;
@@ -221,7 +220,6 @@ main {
   bottom: 100%;
   left: 0;
 }
-
 .p-pickUp__text date {
   font-size: 1vw;
 }
