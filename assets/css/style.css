@@ -168,6 +168,20 @@ main {
   margin: 0 80px;
   display: block;
 }
+@media screen and (max-width: 768px) {
+  .p-pickUp__contents {
+    width: 92vw;
+    height: 92vw;
+    margin: 0 auto;
+    padding-top: 24px;
+  }
+}
+.p-pickUp__contents img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .p-pickUp__label {
   width: 146px;
   padding: 20px 15px 0 0;
@@ -181,6 +195,21 @@ main {
   -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
           clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
+@media screen and (max-width: 768px) {
+  .p-pickUp__label {
+    width: 124px;
+    padding: 10px 10px 0 0;
+    position: absolute;
+    top: 24px;
+    right: var(__contents_SPACE);
+    z-index: 2;
+    text-align: right;
+    background-color: #fff;
+    aspect-ratio: 20/19;
+    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }
+}
 .p-pickUp__label span {
   display: block;
   text-align: center;
@@ -190,12 +219,6 @@ main {
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
-}
-.p-pickUp__contents img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .p-pickUp__text {
   letter-spacing: 0.1em;
@@ -230,6 +253,11 @@ main {
   align-items: center;
   background: url(../../assets/img/header-color.jpg) no-repeat center center/1400px;
   padding: 2vw 3vw 0 3vw;
+}
+@media screen and (max-width: 768px) {
+  .l-mainTop__contents {
+    padding: 0;
+  }
 }
 .l-mainTop__logo {
   width: 12.5vw;
