@@ -114,10 +114,10 @@ main {
   font-weight: 600;
 }
 
-.p-search {
+.p-pcSearch {
   width: 50%;
 
-  &__form1 {
+  &__form {
     display: flex;
     justify-content: space-between;
     border: 1px solid #c1c1c1;
@@ -128,18 +128,48 @@ main {
     }
   }
 
-  &__box1 {
+  &__box {
     width: 50vw;
     font-family: serif;
     border: none;
     padding: 12px 40px 12px 20px;
   }
 
-  &__btn2 {
+  &__btn {
     padding: 16px;
   }
 
-  &__btn2 img {
+  &__btn img {
+    border: none;
+  }
+}
+.p-spSearch {
+  width: 90%;
+  margin: 0 auto;
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    background-color: #efeeee;
+
+    @include pc {
+      display: none;
+    }
+  }
+
+  &__box {
+    width: 90vw;
+    font-family: serif;
+    border: none;
+    padding: 12px 40px 12px 20px;
+    background-color: #efeeee;
+  }
+
+  &__btn {
+    padding: 16px;
+  }
+
+  &__btn img {
     border: none;
   }
 }
@@ -186,11 +216,11 @@ main {
   background: url(../../assets/img/header-color.jpg) no-repeat center / 1400px;
   background-position: top left;
   background-size: 100% 32%;
-  position: relative;
 
   &__contents {
     margin: 0 80px;
     display: block;
+    position: relative;
 
     @include sp {
       width: 92vw;
@@ -211,7 +241,7 @@ main {
     padding: 20px 15px 0 0;
     position: absolute;
     top: 0;
-    right: 80px;
+    right: 0;
     z-index: 2;
     text-align: right;
     background-color: #fff;
@@ -223,7 +253,7 @@ main {
       padding: 10px 10px 0 0;
       position: absolute;
       top: 24px;
-      right: var(__contents_SPACE);
+      right: 0;
       z-index: 2;
       text-align: right;
       background-color: #fff;
@@ -245,13 +275,25 @@ main {
   &__text {
     letter-spacing: 0.1em;
     top: 60%;
-    left: 53px;
+    left: -27px;
     background-color: #fff;
     border-bottom: 5px solid #84c3cf;
     position: absolute;
     z-index: 2;
-    font-size: 1.5vw;
+    font-size: 1.6vw;
     padding: 30px;
+
+    @include sp {
+      letter-spacing: 0.1em;
+      bottom: 0;
+      left: -27px;
+      background-color: #fff;
+      border-bottom: 5px solid #84c3cf;
+      position: absolute;
+      z-index: 2;
+      font-size: 1.6vw;
+      padding: 30px;
+    }
   }
 
   &__text ::before {
@@ -301,12 +343,34 @@ main {
   &__title {
     display: flex;
     justify-content: center;
+    margin: 16vw 0 6vw 0;
+
+    @include sp {
+      margin: 16vw 0 0 0;
+    }
+  }
+
+  &__titleText1 {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  &__titleText2 {
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
   }
 
   &__icon {
     width: 10%;
     height: 100%;
-    padding: 20px;
+    padding: 12px 32px;
+
+    @include sp {
+      width: 68px;
+      height: 100%;
+      padding: 20px;
+    }
   }
 
   &__list {
@@ -315,6 +379,11 @@ main {
 
   &__list article {
     width: 46%;
+
+    @include sp {
+      width: 85%;
+      margin: 6vw auto;
+    }
   }
 
   &__list article a {
@@ -351,6 +420,7 @@ main {
 // .p-news__list article:nth-of-type(2) {
 //   border-bottom:  1px solid gray;
 // }
+
 .l-onlineShop__area {
   display: flex;
 }
