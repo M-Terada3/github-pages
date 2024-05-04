@@ -116,31 +116,30 @@
               </div>
             </div>
           </div>
-
-          <div class="p-spSearch">
-            <form
-            class="p-spSearch__form"
-            action="https://m-terada3.github.io/github.io/"
-            method="get"
-          >
-            <input
-              class="p-spSearch__box"
-              type="search"
-              name="search"
-              placeholder="どんなお知らせをお探しですか？"
-            />
-            <input
-              class="p-spSearch__btn"
-              type="image"
-              src="./assets/img/25024782.png"
-              width="24"
-              height="24"
-              alt="検索"
-              value="検索"
-            />
-            </form>
-          </div>
         </section>
+        <div class="p-spSearch">
+          <form
+          class="p-spSearch__form"
+          action="https://m-terada3.github.io/github.io/"
+          method="get"
+        >
+          <input
+            class="p-spSearch__box"
+            type="search"
+            name="search"
+            placeholder="どんなお知らせをお探しですか？"
+          />
+          <input
+            class="p-spSearch__btn"
+            type="image"
+            src="./assets/img/25024782.png"
+            width="24"
+            height="24"
+            alt="検索"
+            value="検索"
+          />
+          </form>
+        </div>
 
         <section class="p-hotNews">
           <h2 class="p-hotNews__title">
@@ -231,7 +230,9 @@
             </a>
           </article>
         </div>
-        <p class="p-hotNews__more">HOT NEWSをもっと見る</p>
+        <a class="p-hotNews__moreLink" href="">
+          <p class="p-hotNews__more">HOT NEWSをもっと見る</p>
+        </a>
       </section>
 
         <section class="p-onlineShop">
@@ -281,7 +282,10 @@
         </section>
 
         <section class="p-shopList">
-          <h2 class="p-shopList__title">SHOP LIST<br>ショップリスト</h2>
+          <div class="p-shopList__title">
+            <p class="p-shopList__titleText1">SHOP LIST</p>
+            <p class="p-shopList__titleText2">ショップリスト</p>
+          </div>
           <ul class="p-shopList__btn">
             <li><a href="">札幌店</a></li>
             <li><a href="">福島店</a></li>
@@ -383,7 +387,7 @@
         </section>
 
         <section class="l-copy__area">
-          <p class="p-pageTop"><a href=""><img src="./assets/img/coffee-mill.png" alt="ページトップへ"></a>PAGE TOP</p>
+          <p class="p-pageTop"><a href="">PAGE TOP</a></p>
           <div class="l-footer__copy">
             <small class="p-footer__copyText">© FELICE ALL RIGHT RESERVED.</small>
           </div>

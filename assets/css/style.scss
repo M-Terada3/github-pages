@@ -145,7 +145,7 @@ main {
 }
 .p-spSearch {
   width: 90%;
-  margin: 0 auto;
+  margin: 168px auto 0;
 
   &__form {
     display: flex;
@@ -315,36 +315,68 @@ main {
 
 .p-topScroll {
   &__Btn--prev {
-    width: 3vw;
-    position: absolute;
-    right: -52px;
-    bottom: 58%;
+
+    @include pc {
+      width: 3vw;
+      position: absolute;
+      right: -52px;
+      bottom: 58%;
+    }
+
+    @include sp {
+      width: 6vw;
+      position: absolute;
+      bottom: -150px;
+      left: 68px;
+    }
   }
 
   &__Btn--next {
-    width: 3vw;
-    position: absolute;
-    right: -52px;
-    bottom: 70%;
+
+    @include pc {
+      width: 3vw;
+      position: absolute;
+      right: -52px;
+      bottom: 70%;
+    }
+
+    @include sp {
+      width: 6vw;
+      position: absolute;
+      bottom: -150px;
+      left: 16px;
+    }
   }
 
   &__text {
-    writing-mode: vertical-rl;
-    position: absolute;
-    right: -52px;
-    bottom: 32%;
+
+    @include pc {
+      writing-mode: vertical-rl;
+      position: absolute;
+      right: -52px;
+      bottom: 32%;
+    }
+
+    @include sp {
+      position: absolute;
+      right: 0;
+      bottom: -106px;
+    }
   }
 
   &__text::after {
     content: "";
     position: absolute;
-    right: 51%;
-    transform: translateX(-50%);
+    right: 53%;
     width: 1px;
     height: 100%;
     background: #000;
     animation: pathmove 1.4s ease-in-out infinite;
     margin-top: 16px;
+
+    @include sp {
+      margin-top: -8px;
+    }
   }
 
   @keyframes pathmove {
@@ -375,6 +407,10 @@ main {
     z-index: 2;
     width: 30px;
     bottom: -100px;
+
+    @include sp {
+      bottom: -48px;
+    }
   }
 }
 
@@ -404,6 +440,7 @@ main {
 }
 
 .p-hotNews {
+  // margin: 6.5vw;
 
   &__title {
     display: flex;
@@ -415,6 +452,10 @@ main {
     }
   }
 
+  &__titleText {
+    text-align: center;
+  }
+
   &__titleText1 {
     font-size: 28px;
     margin: 0;
@@ -423,7 +464,6 @@ main {
   &__titleText2 {
     font-size: 16px;
     margin: 0;
-    text-align: center;
   }
 
   &__icon {
@@ -474,11 +514,15 @@ main {
     content: "";
     display: inline-block;
     width: 1.5px;
-    height: 93%;
+    height: 90%;
     position: absolute;
     top: 0;
     right: 0;
     background: #d2d2d2;
+
+    @include sp {
+      display: none;
+    }
   }
 
   &__list article:nth-of-type(2) {
@@ -498,11 +542,15 @@ main {
     content: "";
     display: inline-block;
     width: 1.5px;
-    height: 89%;
+    height: 84%;
     position: absolute;
     top: 56px;
     right: 0;
     background: #d2d2d2;
+
+    @include sp {
+      display: none;
+    }
   }
 
   &__list article:nth-of-type(4) {
@@ -518,9 +566,13 @@ main {
     display: inline-block;
     background: #d2d2d2;
     position: absolute;
-    width: 93%;
+    width: 82%;
     height: 1px;
     bottom: 0;
+
+    @include sp {
+      display: none;
+    }
   }
 
   &__list article:nth-of-type(5) {
@@ -532,7 +584,7 @@ main {
   }
 
   &__list article:nth-of-type(6) {
-    padding: 56px 56px 56px 0;
+    padding: 56px 56px 0 0;
     border-top: 1px solid #d2d2d2;
     grid-row: 5 / 7;
     grid-column: 1 / 2;
@@ -542,15 +594,19 @@ main {
     content: "";
     display: inline-block;
     width: 1.5px;
-    height: 93%;
+    height: 90%;
     position: absolute;
     top: 56px;
     right: 0;
     background: #d2d2d2;
+
+    @include sp {
+      display: none;
+    }
   }
 
   &__list article:nth-of-type(7) {
-    padding: 56px 0 56px 56px;
+    padding: 56px 0 0 56px;
     border-top: 1px solid #d2d2d2;
     grid-row: 5 / 7;
     grid-column: 2 / 3;
@@ -565,8 +621,23 @@ main {
     object-fit: cover;
   }
 
-  &__more p {
-    border: 2px solid #000000;
+  &__more {
+    width: 28vw;
+    font-size: 16px;
+    border: 1px solid #000000;
+    padding: 8px 72px;
+    text-align: center;
+    margin: 68px auto;
+
+    @include sp {
+      // width: 400px;
+      // margin: 60px auto 0;
+      width: 60%;
+    }
+  }
+  &__moreLink {
+    text-decoration: none;
+    color: #000;
   }
 }
 
@@ -590,29 +661,63 @@ main {
 }
 
 .p-shopList {
+  margin: 54px 24px;
+  border-top: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 54px 0;
+
   &__title {
     text-align: center;
   }
 
+  &__titleText1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__titleText2 {
+    font-size: 16px;
+    margin: 0;
+  }
+
   &__btn {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: stretch;
-    gap: 20px;
+    padding-inline-start: 0;
+
+    @include pc {
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include sp {
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__btn li {
     list-style: none;
     width: 100%;
-    margin: 0;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, #efece4 0%, #efece4 50%, #fff 50%, #fff 100%);
+    transition: color 0.6s, background-position 0.6s;
+  }
+
+  &__btn li:hover {
+    background-position: 0 0;
   }
 
   &__btn a {
+    display: block;
     font-size: 1.3vw;
     text-decoration: none;
     border: 1px solid #000;
     color: #000;
-    padding: 5px 30px;
+    padding: 10px 30px;
+    text-align: center;
   }
 }
 
@@ -627,4 +732,15 @@ main {
   width: 10.5vw;
   font-family: serif;
   text-align: center;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+}
+.p-pageTop a {
+  display: block;
+  background: url(../../assets/img/coffee-mill.png) no-repeat center center / 68%;
+  aspect-ratio: 447 / 411;
+  text-decoration: none;
+  color: #000;
+  font-size: 12px;
 }
