@@ -142,14 +142,14 @@
         </div>
 
         <section class="p-hotNews">
-          <h2 class="p-hotNews__title">
+          <div class="p-hotNews__title">
             <img class="p-hotNews__icon" src="./assets/img/cafe1.png" alt="image">
-            <div class="p-hotNews__titleText">
-              <p class="p-hotNews__titleText1">HOT NEWS</p>
-              <p class="p-hotNews__titleText2">耳寄りニュース</p>
-            </div>
+            <h2 class="p-hotNews__titleBox">
+              <p class="p-hotNews__title">HOT NEWS</p>
+              <p class="p-hotNews__subTitle">耳寄りニュース</p>
+            </h2>
             <img class="p-hotNews__icon" src="./assets/img/cafe2.png" alt="image">
-          </h2>
+          </div>
           <div class="p-hotNews__list">
             <article>
               <div class="p-hotNews__img">
@@ -230,62 +230,68 @@
             </a>
           </article>
         </div>
-        <a class="p-hotNews__moreLink" href="">
-          <p class="p-hotNews__more">HOT NEWSをもっと見る</p>
-        </a>
+        <div class="p-hotNews__moreLink">
+          <a href="">
+            <span class="p-hotNews__more">HOT NEWSをもっと見る</span>
+          </a>
+        </div>
       </section>
 
         <section class="p-onlineShop">
-          <div class="p-onlineShop__textBox">
-            <h3 class="p-onlineShop__newsTitle">ONLINE SHOP NEWS</h3>
-            <h4>おすすめ商品</h4>
+          <div class="p-onlineShop__leftBox">
+            <h2 class="p-onlineShop__textBox">
+              <p class="p-onlineShop__newsTitle">ONLINE SHOP NEWS</p>
+              <p class="p-onlineShop__newsSubtitle">おすすめ商品</p>
+            </h2>
             <div class="p-onlineShop__view">
               <div class="p-onlineShop__btn1"></div>
               <div class="p-onlineShop__btn2"></div>
             </div>
             <a href=""><p class="p-onlineShop__newsMore">ONLINE SHOP NEWS一覧</a></li>
           </div>
-          <div class="p-onlineShop__itemBox">
-            <ul class="p-onlineShop__items">
-              <li>
-                <div class="p-onlineShop__items--img">
-                  <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
-                </div>
-                <a href="">
-                  <div class="p-onlineShop__label"></div>
-                  <h3 class="p-onlineShop__items--name">商品名</h3>
-                  <h4 class="p-onlineShop__items--text">販売中</h4>
-                </a>
-              </li>
-              <li>
-                <div class="p-onlineShop__items--img">
-                  <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
-                </div>
-                <a href="">
-                  <div class="p-onlineShop__label"></div>
-                  <h3 class="p-onlineShop__items--name">商品名</h3>
-                  <h4 class="p-onlineShop__items--text">販売中</h4>
-                </a>
-              </li>
-              <li>
-                <div class="p-onlineShop__items--img">
-                  <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
-                </div>
-                <a href="">
-                  <div class="p-onlineShop__label"></div>
-                  <h3 class="p-onlineShop__items--name">商品名</h3>
-                  <h4 class="p-onlineShop__items--text">販売中</h4>
-                </a>
-              </li>
-            </ul>
+          <div class="p-onlineShop__rightBox">
+            <div class="p-onlineShop__itemBox">
+              <ul class="p-onlineShop__items">
+                <li>
+                  <div class="p-onlineShop__items--img">
+                    <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
+                  </div>
+                  <a href="">
+                    <div class="p-onlineShop__label"></div>
+                    <h3 class="p-onlineShop__items--name">商品名</h3>
+                    <h4 class="p-onlineShop__items--text">販売中</h4>
+                  </a>
+                </li>
+                <li>
+                  <div class="p-onlineShop__items--img">
+                    <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
+                  </div>
+                  <a href="">
+                    <div class="p-onlineShop__label"></div>
+                    <h3 class="p-onlineShop__items--name">商品名</h3>
+                    <h4 class="p-onlineShop__items--text">販売中</h4>
+                  </a>
+                </li>
+                <li>
+                  <div class="p-onlineShop__items--img">
+                    <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
+                  </div>
+                  <a href="">
+                    <div class="p-onlineShop__label"></div>
+                    <h3 class="p-onlineShop__items--name">商品名</h3>
+                    <h4 class="p-onlineShop__items--text">販売中</h4>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
         <section class="p-shopList">
-          <div class="p-shopList__title">
-            <p class="p-shopList__titleText1">SHOP LIST</p>
-            <p class="p-shopList__titleText2">ショップリスト</p>
-          </div>
+          <h2 class="p-shopList__titleBox">
+            <p class="p-shopList__title">SHOP LIST</p>
+            <p class="p-shopList__subTitle">ショップリスト</p>
+          </h2>
           <ul class="p-shopList__btn">
             <li><a href="">札幌店</a></li>
             <li><a href="">福島店</a></li>
@@ -309,64 +315,68 @@
         </section>
 
         <section class="p-project">
-          <h2 class="p-project__title">FELICE PROJECT</h2>
-          <div class="p-project__article">
-            <a href=""><img src="">
-              <p>体験会</a></li>
-              <a href=""><img src="">
-              <p>イベント</a></li>
-              <a href=""><img src="">
-              <p>ONLINE SHOP</a></li>
-              <a href=""><img src="">
-              <p>雑誌と書籍</a></li>
-              <a href=""><img src="">
-              <p>採用情報</a></li>
+          <h2 class="p-project__textBox">
+            <p class="p-project__title">FELICE PROJECT</p>
+            <p class="p-project__subTitle">Feliceのプロジェクト</p>
+          </h2>
+          <ul class="p-project__article">
+            <li><a href=""><img class="p-project__img" src="./assets/img/coffee-dried.jpg" alt="image"><span>体験会</span></a>
+            </li>
+            <li><a href=""><img class="p-project__img" src="./assets/img/coffee-dried.jpg" alt="image"><span>イベント</span></a>
+            </li>
+            <li><a href=""><img class="p-project__img" src="./assets/img/coffee-dried.jpg" alt="image"><span>ONLINE SHOP</span></a>
+            </li>
+            <li><a href=""><img class="p-project__img" src="./assets/img/coffee-dried.jpg" alt="image"><span>雑誌と書籍</span></a>
+            </li>
+            <li><a href=""><img class="p-project__img" src="./assets/img/coffee-dried.jpg" alt="image"><span>採用情報</span></a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="p-guidance">
+          <ul class="p-guidance__list">
+            <li><a href=""><img class="p-guidance__img" src="./assets/img/bg_img.png" alt="image"><span>Feliceについて</span></a></li>
+              <li><a href=""><img class="p-guidance__img" src="./assets/img/bg_img.png" alt="image"><span>アクセス</span></a></li>
+                <li><a href=""><img class="p-guidance__img" src="./assets/img/bg_img.png" alt="image"><span>予約</span></a></li>
+            </ul>
         </section>
       </main>
 
       <footer>
         <section class="l-footer">
-          <div class="l-footer__top">
-            <a href=""><img src="">
-              <p>Feliceについて</a></li>
-            <a href=""><img src="">
-              <p>アクセス</a></li>
-            <a href=""><img src="">
-              <p>予約</a></li>
-          </div>
-          <div class="l-footer__bottom">
-            <a href=""><img class="p-main__logo"
-              src="./assets/img/main logo.png"
-              alt="Felice"
-              width="200"
-              height="120"/></a>
-          </div>
-          <nav class="l-footer__menuBox1">
-            <ul>
-              <li>
-                <a href="">Feliceについて</a>
-              </li>
-              <li>
-                <a href="">Feliceのこだわり</a>
-              </li>
-              <li>
-                <a href="">ポイントを集めよう</a>
-              </li>
-              <li>
-                <a href="">News一覧</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="l-footer__iconList">
-            <a href=""><img class="p-twitter_icon"
-              src="./assets/img/facebook_icon.png"
-              alt="Facebook"></a>
-            <a href=""><img class="p-twitter_icon"
-              src="./assets/img/instagram_icon.png"
-              alt="instagram"></a>
-            <a href=""><img class="p-twitter_icon"
-              src="./assets/img/twitter_icon.png"
-              alt="Twitter"></a>
+          <div class="l-footer__topArea">
+            <div>
+              <a href=""><img class="l-footer__logo"
+                src="./assets/img/main logo.png"
+                alt="Felice"></a>
+            </div>
+            <nav class="l-footer__menuBox1">
+              <ul class="l-footer__menuList1">
+                <li>
+                  <a href="">Feliceについて</a>
+                </li>
+                <li>
+                  <a href="">Feliceのこだわり</a>
+                </li>
+                <li>
+                  <a href="">ポイントを集めよう</a>
+                </li>
+                <li>
+                  <a href="">News一覧</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="l-footer__iconList">
+              <a href=""><img class="p-twitter_icon"
+                src="./assets/img/facebook_icon.png"
+                alt="Facebook"></a>
+              <a href=""><img class="p-twitter_icon"
+                src="./assets/img/instagram_icon.png"
+                alt="instagram"></a>
+              <a href=""><img class="p-twitter_icon"
+                src="./assets/img/twitter_icon.png"
+                alt="Twitter"></a>
+            </div>
           </div>
           <nav class="l-footer__menuBox2">
             <ul>
