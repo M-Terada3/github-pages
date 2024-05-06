@@ -105,12 +105,16 @@
             <h2 class="p-pickUp__text"><date>2023.04.11</date><br>豆の味と薫りをそのままに。<br>Feliceオーガニックコーヒーのこだわり
             </h2>
             <div class="p-topScroll">
-              <div class="p-topScroll__Btn--prev">
-                <img src="./assets/img/r_arrow.png">
-              </div>
-              <div class="p-topScroll__Btn--next">
-                <img src="./assets/img/l_arrow.png">
-              </div>
+              <a href="">
+                <div class="p-topScroll__prevBtn">
+                  <img src="./assets/img/r_arrow.png">
+                </div>
+              </a>
+              <a href="">
+                <div class="p-topScroll__nextBtn">
+                  <img src="./assets/img/l_arrow.png">
+                </div>
+              </a>
               <div class="p-topScroll__Down">
                 <span class="p-topScroll__text">scroll</span>
               </div>
@@ -210,13 +214,15 @@
             <div class="p-hotNews__img">
               <a href=""><img src="./assets/img/seafood-pizza.jpg" alt="image"></a>
             </div>
-            <a href="">
-              <div class="p-hotNews__label"></div>
-              <p class="p-hotNews__date">2023.02.05</p>
-              <h3 class="p-hotNews__heading">髙橋良実シェフが監修する「シーフードと塩レモンのピザ」を、2023年2月1…</h3>
-              <h5 class="p-hotNews__text">髙橋良実シェフこだわりの海の幸薫る北海道産シーフードピザに瀬戸内レモンの酸味を加え、よりさわやかな…
-              </h5>
-            </a>
+
+            <div class="p-hotNews__label">
+              <a href="">
+                <p class="p-hotNews__date">2023.02.05</p>
+                <h3 class="p-hotNews__heading">髙橋良実シェフが監修する「シーフードと塩レモンのピザ」を、2023年2月1…</h3>
+                <h5 class="p-hotNews__text">髙橋良実シェフこだわりの海の幸薫る北海道産シーフードピザに瀬戸内レモンの酸味を加え、よりさわやかな…
+                </h5>
+              </a>
+            </div>
           </article>
           <article>
             <div class="p-hotNews__img">
@@ -243,47 +249,53 @@
               <p class="p-onlineShop__newsTitle">ONLINE SHOP NEWS</p>
               <p class="p-onlineShop__newsSubtitle">おすすめ商品</p>
             </h2>
-            <div class="p-onlineShop__view">
-              <div class="p-onlineShop__btn1"></div>
-              <div class="p-onlineShop__btn2"></div>
+            <div class="p-onlineShop__btn">
+              <a href="">
+                <div class="p-onlineShop__prevBtn">
+                  <img src="./assets/img/l_arrow.png">
+                </div>
+              </a>
+              <a href="">
+                <div class="p-onlineShop__nextBtn">
+                  <img src="./assets/img/r_arrow.png">
+                </div>
+              </a>
             </div>
             <a href=""><p class="p-onlineShop__newsMore">ONLINE SHOP NEWS一覧</a></li>
           </div>
           <div class="p-onlineShop__rightBox">
-            <div class="p-onlineShop__itemBox">
-              <ul class="p-onlineShop__items">
-                <li>
-                  <div class="p-onlineShop__items--img">
-                    <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
-                  </div>
-                  <a href="">
-                    <div class="p-onlineShop__label"></div>
-                    <h3 class="p-onlineShop__items--name">商品名</h3>
-                    <h4 class="p-onlineShop__items--text">販売中</h4>
-                  </a>
-                </li>
-                <li>
-                  <div class="p-onlineShop__items--img">
-                    <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
-                  </div>
-                  <a href="">
-                    <div class="p-onlineShop__label"></div>
-                    <h3 class="p-onlineShop__items--name">商品名</h3>
-                    <h4 class="p-onlineShop__items--text">販売中</h4>
-                  </a>
-                </li>
-                <li>
-                  <div class="p-onlineShop__items--img">
-                    <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
-                  </div>
-                  <a href="">
-                    <div class="p-onlineShop__label"></div>
-                    <h3 class="p-onlineShop__items--name">商品名</h3>
-                    <h4 class="p-onlineShop__items--text">販売中</h4>
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <ul class="p-onlineShop__items">
+              <li>
+                <div class="p-onlineShop__items--img">
+                  <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
+                </div>
+                <a href="">
+                  <div class="p-onlineShop__label"></div>
+                  <h3 class="p-onlineShop__items--name">商品名</h3>
+                  <h4 class="p-onlineShop__items--text">販売中</h4>
+                </a>
+              </li>
+              <li>
+                <div class="p-onlineShop__items--img">
+                  <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
+                </div>
+                <a href="">
+                  <div class="p-onlineShop__label"></div>
+                  <h3 class="p-onlineShop__items--name">商品名</h3>
+                  <h4 class="p-onlineShop__items--text">販売中</h4>
+                </a>
+              </li>
+              <li>
+                <div class="p-onlineShop__items--img">
+                  <a href=""><img src="./assets/img/bread-roll.jpg" alt="商品"></a>
+                </div>
+                <a href="">
+                  <div class="p-onlineShop__label"></div>
+                  <h3 class="p-onlineShop__items--name">商品名</h3>
+                  <h4 class="p-onlineShop__items--text">販売中</h4>
+                </a>
+              </li>
+            </ul>
           </div>
         </section>
 
