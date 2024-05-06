@@ -113,7 +113,7 @@ main {
 }
 .p-sofia {
   font-family: serif;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .p-pcSearch {
@@ -292,7 +292,7 @@ main {
       left: -12px;
       margin: 0;
       padding: 16px;
-      font-size: 2.4vw;
+      font-size: 3.6vw;
     }
   }
 
@@ -314,7 +314,11 @@ main {
   }
 
   &__text date {
-    font-size: 1vw;
+    font-size: 1.6vw;
+
+    @include sp {
+      font-size: 3vw;
+    }
   }
 }
 
@@ -835,7 +839,6 @@ main {
 
   &__title {
     font-size: 34px;
-    font-weight: 700;
     margin: 0;
   }
 
@@ -875,12 +878,16 @@ main {
 
   &__btn a {
     display: block;
-    font-size: 1.3vw;
+    font-size: 1.6vw;
     text-decoration: none;
     border: 1px solid #000;
     color: #000;
     padding: 10px 30px;
     text-align: center;
+
+    @include sp {
+      font-size: 10px;
+    }
   }
 }
 
@@ -903,20 +910,29 @@ main {
   }
 
   &__article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding-inline-start: 0;
+
+    @include pc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__img {
     height: 160px;
     object-fit: cover;
+
+    @include sp {
+      height: 200px;
+      display: block;
+      object-fit: cover;
+    }
   }
 
   &__article li {
     list-style-type: none;
     position: relative;
-    margin: 12px;
+    margin: 30px 12px;
   }
 
   &__article a {
@@ -927,10 +943,15 @@ main {
     position: absolute;
     top: 32%;
     left: 0;
-    font-size: 1.4vw;
+    font-size: 1.3vw;
     padding: 12px 40px;
     background-color: #fff;
     border-radius: 0 5px 5px 0;
+
+    @include sp {
+      font-size: 4.3vw;
+      top: 36%;
+    }
   }
 }
 
@@ -938,20 +959,29 @@ main {
   margin: 90px 16px;
 
   &__list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     padding-inline-start: 0;
+
+    @include pc {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
   &__img {
     height: 160px;
     object-fit: cover;
+
+    @include sp {
+      height: 200px;
+      display: block;
+      object-fit: cover;
+    }
   }
 
   &__list li {
     list-style-type: none;
     position: relative;
-    margin: 12px;
+    margin: 30px 12px;
   }
 
   &__list li a {
@@ -969,11 +999,15 @@ main {
     bottom: 0;
     left: 0;
     margin: auto;
-    font-size: 1.4vw;
-    padding: 12px 40px;
+    font-size: 1.3vw;
+    padding: 12px 24px;
     background-color: #fff;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 8px;
+
+    @include sp {
+      font-size: 4.5vw;
+    }
   }
 }
 
@@ -992,6 +1026,19 @@ main {
     display: flex;
   }
 
+  &__menuList1 li {
+    list-style: none;
+    padding: 0 1.5vw;
+  }
+
+  &__menuList1 li a {
+    font-size: 1.2vw;
+    font-family: serif;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+  }
+
   &__iconList {
     display: flex;
     width: 4vw;
@@ -1003,15 +1050,23 @@ main {
   font-family: serif;
   text-align: center;
   position: fixed;
-  bottom: 20px;
+  bottom: -15px;
   right: 0;
   z-index: 2;
+
+  @include sp {
+    width: 20vw;
+  }
 }
 .p-pageTop a {
   display: block;
   background: url(../../assets/img/coffee-mill.png) no-repeat center center / 68%;
-  aspect-ratio: 375 / 416;
+  aspect-ratio: 475 / 455;
   text-decoration: none;
   color: #000;
-  font-size: 1.6vw;
+  font-size: 1.2vw;
+
+  @include sp {
+    font-size: 1.8vw;
+  }
 }
