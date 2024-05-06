@@ -350,7 +350,7 @@ main {
 .p-topScroll__text::after {
   content: "";
   position: absolute;
-  right: 53%;
+  right: 55%;
   width: 1px;
   height: 100%;
   background: #000;
@@ -794,7 +794,7 @@ main {
 }
 .p-shopList__btn a {
   display: block;
-  font-size: 1.6vw;
+  font-size: 1.4vw;
   text-decoration: none;
   border: 1px solid #000;
   color: #000;
@@ -832,7 +832,7 @@ main {
   }
 }
 .p-project__img {
-  height: 160px;
+  height: 156px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -882,7 +882,7 @@ main {
   }
 }
 .p-guidance__img {
-  height: 160px;
+  height: 156px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -932,13 +932,16 @@ main {
 }
 .l-footer__topArea {
   display: flex;
+  justify-content: space-around;
+  margin: 0 40px 80px 0;
 }
 .l-footer__menuList1 {
   display: flex;
+  padding-inline-start: 0;
+  gap: clamp(25px, 4.5vw, 50px);
 }
 .l-footer__menuList1 li {
   list-style: none;
-  padding: 0 1.5vw;
 }
 .l-footer__menuList1 li a {
   font-size: 1.2vw;
@@ -949,7 +952,45 @@ main {
 }
 .l-footer__iconList {
   display: flex;
-  width: 4vw;
+  width: 12vw;
+  gap: 24px;
+  margin-top: 24px;
+}
+.l-footer__menuList2 {
+  display: flex;
+  margin: 0 40px 40px;
+  padding: 0;
+  background-color: #ccc4ad;
+  font-size: 1.2vw;
+  gap: 2px;
+  padding: 2px;
+}
+@media screen and (max-width: 768px) {
+  .l-footer__menuList2 {
+    font-size: 1.8vw;
+  }
+}
+.l-footer__menuList2 li {
+  width: 25%;
+  text-align: center;
+  list-style-type: none;
+}
+.l-footer__menuList2 li.current a {
+  background-color: #fff;
+  color: #000;
+}
+.l-footer__menuList2 li a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  padding: 16px 2px;
+  background-color: #efece4;
+  border-radius: 5px;
+}
+.l-footer__copy {
+  padding: 22px 0;
+  background-color: #efece4;
+  text-align: center;
 }
 
 .p-pageTop {

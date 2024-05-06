@@ -378,7 +378,7 @@ main {
   &__text::after {
     content: "";
     position: absolute;
-    right: 53%;
+    right: 55%;
     width: 1px;
     height: 100%;
     background: #000;
@@ -391,20 +391,37 @@ main {
   }
 
   @keyframes pathmove {
-    0%{
-      height:0;
-      top:30px;
-      opacity: 0;
-    }
-    30%{
-      height:40px;
-      opacity: 1;
-    }
-    100%{
-      height:60px;
-      top:50px;
-      opacity: 0;
-    }
+      0%{
+        height:0;
+        top:30px;
+        opacity: 0;
+      }
+      30%{
+        height:40px;
+        opacity: 1;
+      }
+      100%{
+        height:60px;
+        top:50px;
+        opacity: 0;
+      }
+
+    // @include sp {
+    //   0%{
+    //     height:0;
+    //     top:30px;
+    //     opacity: 0;
+    //   }
+    //   30%{
+    //     height:30px;
+    //     opacity: 1;
+    //   }
+    //   100%{
+    //     height:20px;
+    //     top:50px;
+    //     opacity: 0;
+    //   }
+    // }
   }
 
   &__text::before {
@@ -878,7 +895,7 @@ main {
 
   &__btn a {
     display: block;
-    font-size: 1.6vw;
+    font-size: 1.4vw;
     text-decoration: none;
     border: 1px solid #000;
     color: #000;
@@ -919,7 +936,7 @@ main {
   }
 
   &__img {
-    height: 160px;
+    height: 156px;
     object-fit: cover;
 
     @include sp {
@@ -968,7 +985,7 @@ main {
   }
 
   &__img {
-    height: 160px;
+    height: 156px;
     object-fit: cover;
 
     @include sp {
@@ -1020,15 +1037,18 @@ main {
 
   &__topArea {
     display: flex;
+    justify-content: space-around;
+    margin: 0 40px 80px 0;
   }
 
   &__menuList1 {
     display: flex;
+    padding-inline-start: 0;
+    gap: clamp(25px, 4.5vw, 50px);
   }
 
   &__menuList1 li {
     list-style: none;
-    padding: 0 1.5vw;
   }
 
   &__menuList1 li a {
@@ -1041,7 +1061,49 @@ main {
 
   &__iconList {
     display: flex;
-    width: 4vw;
+    width: 12vw;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  &__menuList2 {
+    display: flex;
+    margin: 0 40px 40px;
+    padding: 0;
+    background-color: #ccc4ad;
+    font-size: 1.2vw;
+    gap: 2px;
+    padding: 2px;
+
+    @include sp {
+      font-size: 1.8vw;
+    }
+  }
+
+  &__menuList2 li {
+    width: 25%;
+    text-align: center;
+    list-style-type: none;
+  }
+
+  &__menuList2 li.current a {
+    background-color: #fff;
+    color: #000;
+  }
+
+  &__menuList2 li a {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    padding: 16px 2px;
+    background-color: #efece4;
+    border-radius: 5px;
+  }
+
+  &__copy {
+    padding: 22px 0;
+    background-color: #efece4;
+    text-align: center;
   }
 }
 
