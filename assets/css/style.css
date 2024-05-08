@@ -92,12 +92,21 @@ main {
   padding: 16px 2px;
   background-color: #fff;
   border-radius: 5px 5px 0 0;
-  transition: all 0.3s ease 0s;
+}
+@media screen and (max-width: 768px) {
+  .l-main__menu li a {
+    transition: all 0.3s ease 0s;
+  }
 }
 .l-main__menu li a:hover {
   opacity: 0.7;
   filter: alpha(opacity=70);
   -ms-filter: "alpha(opacity=70)";
+}
+@media screen and (max-width: 768px) {
+  .l-main__menu li a:hover {
+    display: none;
+  }
 }
 
 .p-sofia {
@@ -227,8 +236,8 @@ main {
      object-fit: cover;
 }
 .p-pickUp__label {
-  width: 146px;
-  padding: 20px 15px 0 0;
+  width: 190px;
+  padding: 24px 20px 0 0;
   position: absolute;
   top: 0;
   right: 0;
@@ -241,8 +250,8 @@ main {
 }
 @media screen and (max-width: 768px) {
   .p-pickUp__label {
-    width: 124px;
-    padding: 10px 10px 0 0;
+    width: 146px;
+    padding: 20px 15px 0 0;
     position: absolute;
     top: 24px;
     right: 0;
@@ -263,6 +272,24 @@ main {
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
+}
+.p-pickUp__labelTop {
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  .p-pickUp__labelTop {
+    font-size: 14px;
+  }
+}
+.p-pickUp__labelBtm {
+  font-size: 27px;
+  line-height: 1;
+}
+@media screen and (max-width: 768px) {
+  .p-pickUp__labelBtm {
+    font-size: 18px;
+    line-height: 0.8;
+  }
 }
 .p-pickUp__text {
   letter-spacing: 0.1em;
@@ -314,10 +341,9 @@ main {
 
 .p-topScroll {
   position: absolute;
-  right: 8px;
+  right: 16px;
   top: 46%;
   padding: 0;
-  margin-top: -20px;
 }
 @media screen and (max-width: 768px) {
   .p-topScroll {
@@ -330,10 +356,13 @@ main {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
+  position: absolute;
 }
 @media screen and (min-width: 768px) {
   .p-topScroll__prevBtn {
     width: 3vw;
+    top: -30px;
+    left: 0;
   }
 }
 @media screen and (max-width: 768px) {
@@ -349,11 +378,13 @@ main {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
+  position: absolute;
 }
 @media screen and (min-width: 768px) {
   .p-topScroll__nextBtn {
     width: 3vw;
-    margin-top: 16px;
+    top: 36px;
+    left: 0px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -364,14 +395,20 @@ main {
 .p-topScroll__nextBtn img {
   vertical-align: bottom;
 }
+.p-topScroll__text {
+  position: relative;
+}
 @media screen and (min-width: 768px) {
   .p-topScroll__text {
     writing-mode: vertical-rl;
-    margin: 46px 24px 0 0;
+    margin: 100px auto;
+    padding: 0 10px;
   }
 }
 .p-topScroll__text::after {
   content: "";
+  position: absolute;
+  right: 55%;
   width: 1px;
   height: 100%;
   background: #000;
@@ -390,11 +427,11 @@ main {
     opacity: 0;
   }
   30% {
-    height: 40px;
+    height: 46px;
     opacity: 1;
   }
   100% {
-    height: 60px;
+    height: 16px;
     top: 50px;
     opacity: 0;
   }
@@ -405,11 +442,11 @@ main {
   background: url(../../assets/img/d_arrow.png) no-repeat center center/100%;
   aspect-ratio: 3/2;
   position: absolute;
-  left: 24%;
+  left: 43%;
   transform: translateX(-50%);
   z-index: 2;
   width: 28px;
-  bottom: -46px;
+  bottom: -76px;
 }
 @media screen and (max-width: 768px) {
   .p-topScroll__text::before {
