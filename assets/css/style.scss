@@ -111,18 +111,16 @@ main {
     background-color: #fff;
     border-radius: 5px 5px 0 0;
 
-    @include sp {
+    @include pc {
       transition: all .3s ease 0s;
     }
   }
 
   & li a:hover {
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    -ms-filter: "alpha(opacity=70)";
-
-    @include sp {
-      display: none;
+    @include pc {
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+      -ms-filter: "alpha(opacity=70)";
     }
   }
 }
@@ -241,12 +239,15 @@ main {
   background-position: top left;
   background-size: 100% 50%;
   margin-bottom: 190px;
-  position: relative;
 
   &__contents {
     margin: 0 80px;
     display: block;
     position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
 
     @include sp {
       width: 92vw;
@@ -257,9 +258,27 @@ main {
   }
 
   &__contents img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  }
+
+    @include pc {
+      transition:1s all;
+    }
+
+  &__contents img:hover {
+    @include pc {
+      transform:scale(1.2,1.2);
+      transition:1s all;
+    }
+  }
+
+  &__topArticle img {
+    // width: 100%;
+    // height: 100%;
+    // object-fit: cover;
+  }
+
+  .hidden {
+    display: none;
   }
 
   &__label {
@@ -287,6 +306,7 @@ main {
       clip-path: polygon(100% 0, 0 0, 100% 100%);
     }
   }
+
   &__label span {
     display: block;
     text-align: center;
@@ -317,13 +337,22 @@ main {
   }
 
   &__text {
+    // letter-spacing: 0.1em;
+    // top: 60%;
+    // left: 53px;
+    // background-color: #fff;
+    // border-bottom: 5px solid #84c3cf;
+    // position: absolute;
+    // z-index: 2;
+    // font-size: 1.6vw;
+    // padding: 30px;
     letter-spacing: 0.1em;
-    top: 60%;
+    top: 62%;
     left: -27px;
     background-color: #fff;
     border-bottom: 5px solid #84c3cf;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     font-size: 1.6vw;
     padding: 30px;
 
@@ -364,15 +393,18 @@ main {
 }
 
 .p-topScroll {
-  position: absolute;
-  right: 16px;
-  top: 46%;
-  padding: 0;
+  margin: 50px auto;
 
   @include sp {
     display: flex;
     align-items: flex-end;
 
+  }
+
+  &__btn {
+    position: absolute;
+    right: 60px;
+    bottom:16%;
   }
 
   &__prevBtn {
@@ -384,8 +416,6 @@ main {
 
     @include pc {
       width: 3vw;
-      top: -30px;
-      left: 0;
     }
 
     @include sp {
@@ -405,8 +435,7 @@ main {
 
     @include pc {
       width: 3vw;
-      top: 36px;
-      left: 0px;
+      margin-top: clamp(50px, 7.5vw, 100px);
     }
 
     @include sp {
@@ -422,8 +451,7 @@ main {
 
     @include pc {
       writing-mode: vertical-rl;
-      margin: 100px auto;
-      padding: 0 10px;
+      margin: 50px auto;
     }
 
     @include sp {
@@ -497,6 +525,14 @@ main {
   }
 }
 
+.p-topScroll {
+  &__Down {
+    position: absolute;
+    right: 24px;
+    bottom: -240px;
+  }
+}
+
 .l-mainTop {
   &__contents {
     display: flex;
@@ -530,7 +566,7 @@ main {
 }
 
 .p-hotNews {
-  margin: 30px;
+  margin: 50px;
 
   &__title {
     display: flex;
@@ -591,7 +627,6 @@ main {
   }
 
   &__list article a {
-    font-size: 1.9vw;
     text-decoration: none;
     outline: none;
     color: #000000;
@@ -670,7 +705,6 @@ main {
       padding: 56px 0 56px 56px;
       grid-row: 3 / 4;
       grid-column: 2 / 3;
-      // width: 50%;
     }
 
     @include sp {
@@ -679,7 +713,7 @@ main {
   }
 
   &__list article:nth-of-type(4) img {
-
+    display: block;
   }
 
   &__list article:nth-of-type(4)::before {
@@ -704,7 +738,6 @@ main {
       padding: 56px 0 56px 56px;
       grid-row: 4 / 5;
       grid-column: 2 / 3;
-      // width: 50%;
     }
   }
 
@@ -743,10 +776,64 @@ main {
     }
   }
 
-  &__img img {
+  &__imgArea {
+    position: relative;
     width: 100%;
+  }
+
+  &__label {
+    width: 90px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #7e7562;
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  &__label::after {
+    content: "";
+    display: inline-block;
+    clip-path: polygon(100% 0, 50% 50%, 100% 100%, 0 100%, 0 0);
+    background-color: #7e7562;
+    width: 12px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    z-index: 3;
+  }
+
+  &__label a {
+    padding: 7px 10px 8px 15px;
+  }
+
+  &__label span {
+    color: #fff;
+    width: fit-content;
+    font-size: 11px;
+  }
+
+  &__img {
+    overflow: hidden;
+  }
+
+  &__img img {
     object-fit: cover;
-    vertical-align: bottom
+    vertical-align: bottom;
+
+    @include pc {
+      transition:1s all;
+    }
+  }
+
+  &__img img:hover{
+    @include pc {
+      transform:scale(1.2,1.2);
+      transition:1s all;
+    }
   }
 
   &__date {
@@ -814,6 +901,14 @@ main {
     @include sp {
       display: none;
     }
+  }
+
+  // &__textArea:nth-of-type(4) {
+  //   width: 80%;
+  // }
+
+  &__textArea {
+    margin-bottom: 60px;
   }
 
   h5:nth-child(4) {
@@ -1113,12 +1208,10 @@ main {
   }
 
   &__article a:hover {
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    -ms-filter: "alpha(opacity=70)";
-
-    @include sp {
-      display: none;
+    @include pc {
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+      -ms-filter: "alpha(opacity=70)";
     }
   }
 
@@ -1132,7 +1225,7 @@ main {
     border-radius: 0 5px 5px 0;
 
     @include sp {
-      font-size: 4.3vw;
+      font-size: 3.5vw;
       top: 36%;
     }
   }
@@ -1180,12 +1273,10 @@ main {
   }
 
   &__list a:hover {
+    @include pc {
     opacity: 0.7;
     filter: alpha(opacity=70);
     -ms-filter: "alpha(opacity=70)";
-
-    @include sp {
-      display: none;
     }
   }
 
@@ -1205,7 +1296,7 @@ main {
     border-radius: 8px;
 
     @include sp {
-      font-size: 4.5vw;
+      font-size: 3.5vw;
     }
   }
 }
@@ -1229,7 +1320,7 @@ main {
   }
 
   &__topArea {
-    margin: 0 40px 80px 0;
+    margin: 0 auto 80px;
 
     @include pc {
       display: flex;
@@ -1278,9 +1369,11 @@ main {
   }
 
   &__menuList1 li a:hover {
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    -ms-filter: "alpha(opacity=70)";
+    @include pc {
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+      -ms-filter: "alpha(opacity=70)";
+    }
   }
 
   &__iconList {
@@ -1308,12 +1401,10 @@ main {
   }
 
   &__iconList a:hover {
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    -ms-filter: "alpha(opacity=70)";
-
-    @include sp {
-      display: none;
+    @include pc {
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+      -ms-filter: "alpha(opacity=70)";
     }
 }
 
