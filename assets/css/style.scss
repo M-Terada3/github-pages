@@ -48,73 +48,9 @@ main {
     margin-left: 2.5vw;
   }
 
-  &__hamburgerNav {
-    margin-left: auto;
-  }
-
-  &__hamburgerIcon {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    background: #fff;
-  }
-
-  // &__hamburgerIcon.close {
-  //   transform: translate(-50%,10px) rotate(45deg);
-  //   transition: transform .3s;
-  // }
-
-  &__hamburgerIcon span {
-    display: inline-block;
-    position: absolute;
-    left: 13px;
-    height: 2px;
-    background-color: #666;
-  }
-
-//   &__bar {
-//     width: 20px;
-//     height: 2px;
-//     display: block;
-//     position: absolute;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     background-color: #666;
-// }
-
-//   &__barTop {
-//     top: 22px;
-//     width: 55%;
-//   }
-
-//   &__barBottom {
-//     top: 35px;
-//     width: 55%;
-//   }
-
-  &__hamburgerIcon.close .barTop {
-    transform: translate(-50%,10px) rotate(45deg);
-    transition: transform .3s;
-  }
-
-  &__hamburgerIcon.close .barBottom {
-    transform: translate(-50%,-8px) rotate(-45deg);
-    transition: transform .3s;
-  }
-
-  &__hamburgerIcon span:nth-of-type(1) {
-    top: 22px;
-    width: 55%;
-  }
-  &__hamburgerIcon span:nth-of-type(2) {
-    top: 35px;
-    width: 55%;
-  }
-
-  &__menuList {
+  &__menuLists {
     display: none;
-    background-color: lightgreen;
+    background-color: #fff;
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -122,18 +58,25 @@ main {
     left: 0;
     padding-top: 50px;
     text-align: center;
+    z-index: 999;
+  }
+
+    ul {
+      display: block;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+      padding: 10px;
+    }
 
     a {
       color: #000;
       text-decoration: none;
     }
 
-  }
-}
-
-.menu-lists ul li{
-  padding: 10px;
-  text-decoration: none;
 }
 
 @include sp {
@@ -158,10 +101,7 @@ main {
   }
 
   .bar-top{ top: 10px;}
-  .bar-middle{
-      top: 50%;
-      transform: translate(-50%,-50%);
-  }
+
   .bar-bottom{ bottom: 10px;}
 
   .btn.close .bar-top{
@@ -171,32 +111,14 @@ main {
 
   .btn.close .bar-middle{
       opacity: 0;
-      transition: opacity .3s;
   }
 
   .btn.close .bar-bottom{
       transform: translate(-50%,-8px) rotate(-45deg);
       transition: transform .3s;
   }
-
-  .menu-lists{
-      display: none;
-      background-color: #fff;
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding-top: 50px;
-      text-align: center;
-  }
-
-  .menu-lists ul{
-      display: block;
-      padding-inline-start: 0;
-  }
-
 }
+
 
 .l-main__menu {
   & ul {
@@ -297,7 +219,7 @@ main {
     width: 90vw;
     font-family: serif;
     border: none;
-    padding: 12px 40px 12px 20px;
+    padding: 12px 0 12px 20px;
     background-color: #efeeee;
   }
 
@@ -697,7 +619,7 @@ main {
   margin: 50px;
 
   @include sp {
-    margin: 16px;
+    margin: 20px;
   }
 
   &__title {
@@ -1069,7 +991,7 @@ main {
     text-decoration: none;
     color: #000;
     border: 1px solid #000000;
-    padding: 12px 80px;
+    padding: 12px 0;
 
     @include pc {
       background-repeat: no-repeat;
@@ -1090,16 +1012,15 @@ main {
 }
 
 .p-onlineShop {
+  background-color: #f8f8f8;
 
   @include pc {
     display: flex;
     gap: 60px;
-    background-color: #f8f8f8;
-    padding: 100px 28px;
+    padding: 100px 20px;
   }
 
   @include sp {
-    background-color: #f8f8f8;
     padding: 100px 28px;
   }
 
@@ -1120,12 +1041,8 @@ main {
   }
 
   &__newsTitle {
-    font-size: 34px;
+    font-size: 30px;
     margin: 0;
-
-    @include sp {
-      font-size: 30px;
-    }
   }
 
   &__newsSubtitle {
@@ -1144,11 +1061,12 @@ main {
   &__prevBtn {
     @include pc {
       width: 3vw;
+      cursor: pointer;
     }
   }
 
   &__prevBtn a {
-    // vertical-align: bottom;
+    vertical-align: bottom;
   }
 
   &__nextBtn {
@@ -1156,11 +1074,12 @@ main {
 
     @include pc {
       width: 3vw;
+      cursor: pointer;
     }
   }
 
   &__nextBtn a {
-    // vertical-align: bottom;
+    vertical-align: bottom;
   }
 
   &__newsMore {
@@ -1168,25 +1087,22 @@ main {
     margin: 64px auto;
 
     @include sp {
-      width: 90%;
+      display: none;
     }
   }
 
   &__newsMore a {
     display: block;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px;
     color: #000;
     border: 1px solid #000000;
-    padding: 12px 64px;
-
-    @include pc {
-      background-repeat: no-repeat;
-      background-position: 100% 0;
-      background-size: 200% auto;
-      background-image: linear-gradient(to right, #efece4 0%, #efece4 50%, #fff 50%, #fff 100%);
-      transition: color 0.6s, background-position 0.6s;
-    }
+    padding: 12px 0;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, #efece4 0%, #efece4 50%, #fff 50%, #fff 100%);
+    transition: color 0.6s, background-position 0.6s;
   }
 
   &__newsMore a:hover {
@@ -1194,22 +1110,96 @@ main {
   }
 
   &__rightBox {
-
     @include pc {
-      width: 30%;
+      width: 70%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
     }
   }
 
+  &__itemImg {
+    position: relative;
+  }
+
+  &__label {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #7e7562;
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  &__label::after {
+    content: "";
+    display: inline-block;
+    clip-path: polygon(100% 0, 50% 50%, 100% 100%, 0 100%, 0 0);
+    background-color: #7e7562;
+    width: 12px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    z-index: 3;
+  }
+
+  &__label a {
+    padding: 7px 10px 8px 15px;
+  }
+
+  &__label span {
+    color: #fff;
+    width: fit-content;
+    font-size: 11px;
+  }
+
   &__items {
+    padding-inline-start: 0;
 
     @include pc {
       display: flex;
-      justify-content: space-around
+      justify-content: space-around;
+      overflow-y: hidden;
+
+      width: 300%;
+      height: 100%;
+      display: flex;
+      transition: all 0.3s;
     }
+  }
+
+  &__itemName {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &__itemText {
+    font-size: 14px;
+    margin: 10px 0 50px 0;
   }
 
   &__items li {
     list-style-type: none;
+
+    @include pc {
+      width: 33.33%;
+      height: 100%;
+      font-size: 16px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__items li:nth-child(1) {
+    transform: translateX(0);
+  }
+
+  &__items li:nth-child(2) {
+    transform: translateX(-33.33%);
   }
 
   &__items li a {
@@ -1219,8 +1209,27 @@ main {
     color: #000000;
   }
 
-  &__items--img {
-    // width: 10vw;
+  &__itemsImg {
+    // width: 30vw;
+  }
+
+  &__spMore {
+    width: 90%;
+    margin: 0 auto;
+
+    @include pc {
+      display: none;
+    }
+  }
+
+  &__spMore a {
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    border: 1px solid #000000;
+    padding: 12px 0;
   }
 
 }
@@ -1287,7 +1296,7 @@ main {
     text-decoration: none;
     border: 1px solid #000;
     color: #000;
-    padding: 10px 30px;
+    padding: 10px 0;
     text-align: center;
 
     @include sp {
