@@ -1195,11 +1195,15 @@ main {
     }
   }
   &__items li:nth-child(1) {
-    transform: translateX(0);
+    @include pc {
+      transform: translateX(0);
+    }
   }
 
   &__items li:nth-child(2) {
-    transform: translateX(-33.33%);
+    @include pc {
+      transform: translateX(-33.33%);
+    }
   }
 
   &__items li a {

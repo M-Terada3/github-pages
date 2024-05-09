@@ -1081,11 +1081,15 @@ main {
     align-items: center;
   }
 }
-.p-onlineShop__items li:nth-child(1) {
-  transform: translateX(0);
+@media screen and (min-width: 768px) {
+  .p-onlineShop__items li:nth-child(1) {
+    transform: translateX(0);
+  }
 }
-.p-onlineShop__items li:nth-child(2) {
-  transform: translateX(-33.33%);
+@media screen and (min-width: 768px) {
+  .p-onlineShop__items li:nth-child(2) {
+    transform: translateX(-33.33%);
+  }
 }
 .p-onlineShop__items li a {
   font-size: 1.3vw;
