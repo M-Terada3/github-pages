@@ -1515,6 +1515,7 @@ main {
 @media screen and (max-width: 768px) {
   .p-pageTop {
     width: 40.5vw;
+    height: 80%;
     bottom: 0;
   }
 }
