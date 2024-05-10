@@ -51,6 +51,7 @@ main {
   &__menuLists {
     display: none;
     background-color: #fff;
+    font-family: serif;
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -443,14 +444,16 @@ main {
 
   @include sp {
     display: flex;
-    align-items: flex-end;
+    justify-content: space-between;
 
   }
 
   &__btn {
-    position: absolute;
-    right: 60px;
-    bottom:18%;
+    @include pc {
+      position: absolute;
+      right: 60px;
+      bottom:18%;
+    }
   }
 
   &__prevBtn {
@@ -572,15 +575,16 @@ main {
       bottom: -48px;
     }
   }
-}
 
-.p-topScroll {
   &__Down {
-    position: absolute;
-    right: 24px;
-    bottom: -240px;
+    @include pc {
+      position: absolute;
+      right: 24px;
+      bottom: -240px;
+    }
   }
 }
+
 
 .l-mainTop {
   &__contents {
@@ -1638,9 +1642,7 @@ main {
   cursor: pointer;
 
   @include sp {
-    width: 20.5vw;
-    height: 80px;
-    bottom: 0;
+    width: 20vw;
   }
 }
 
@@ -1658,6 +1660,6 @@ main {
 
   @include sp {
     font-size: 1.8vw;
-    width: 20.5vw;
+    width: 20vw;
   }
 }
