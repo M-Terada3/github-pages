@@ -59,12 +59,14 @@ main {
     padding-top: 50px;
     text-align: center;
     z-index: 4;
+    animation: UpAnime 0.5s forwards;
+  }
   }
 
-  &__menuLists.panelactive {
-    opacity: 1;
-    z-index:999;
-  }
+  // &__menuLists.panelactive {
+  //   // opacity: 1;
+  //   // z-index:999;
+  // }
 
   &__menuLists ul {
       display: block;
@@ -1642,8 +1644,8 @@ main {
   cursor: pointer;
 
   @include sp {
-    width: 40.5vw;
-    height: 80%;
+    width: 20.5vw;
+    height: 80px;
     bottom: 0;
   }
 }
