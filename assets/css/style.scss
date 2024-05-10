@@ -1642,7 +1642,7 @@ main {
   cursor: pointer;
 
   @include sp {
-    height: 50px;
+    width: 20.5vw;
     bottom: 0;
   }
 }
@@ -1661,7 +1661,7 @@ main {
   font-size: 1vw;
 
   @include sp {
-    background: url(../../assets/img/coffee-mill.png) no-repeat center center / 100%;
     font-size: 1.8vw;
+    width: 20.5vw;
   }
 }

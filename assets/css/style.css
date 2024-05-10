@@ -1514,7 +1514,7 @@ main {
 }
 @media screen and (max-width: 768px) {
   .p-pageTop {
-    height: 50px;
+    width: 20.5vw;
     bottom: 0;
   }
 }
@@ -1533,7 +1533,7 @@ main {
 }
 @media screen and (max-width: 768px) {
   .p-pageTop span {
-    background: url(../../assets/img/coffee-mill.png) no-repeat center center/100%;
     font-size: 1.8vw;
+    width: 20.5vw;
   }
 }/*# sourceMappingURL=style.css.map */
