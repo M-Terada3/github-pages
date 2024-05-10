@@ -25,13 +25,13 @@
           </div>
           <nav class="l-sp__menuLists">
               <ul>
-            <li><a href="#">Feliceについて</a></li>
-            <li><a href="#">Feliceのこだわり</a></li>
-            <li><a href="#">News一覧</a></li>
-            <li><a href="#">ONLINE SHOP</a></li>
-            <li><a href="#">店舗一覧</a></li>
-            <li><a href="#">アクセス</a></li>
-            <li><a href="#">予約</a></li>
+            <li><a href="">Feliceについて</a></li>
+            <li><a href="">Feliceのこだわり</a></li>
+            <li><a href="">News一覧</a></li>
+            <li><a href="">ONLINE SHOP</a></li>
+            <li><a href="">店舗一覧</a></li>
+            <li><a href="">アクセス</a></li>
+            <li><a href="">予約</a></li>
               </ul>
           </nav>
         </div>
@@ -160,11 +160,11 @@
           </div>
           <div class="p-topScroll">
             <div class="p-topScroll__btn">
-              <div class="p-topScroll__prevBtn">
-                <a href=""><img src="./assets/img/l_arrow.png"></a>
+              <div id="p-topScroll__prevBtn" class="p-topScroll__prevBtn">
+                <img src="./assets/img/l_arrow.png">
               </div>
-              <div class="p-topScroll__nextBtn">
-                <a href=""><img src="./assets/img/r_arrow.png"></a>
+              <div id ="p-topScroll__nextBtn" class="p-topScroll__nextBtn">
+                <img src="./assets/img/r_arrow.png">
               </div>
             </div>
             <div class="p-topScroll__Down">
@@ -342,16 +342,12 @@
               <p class="p-onlineShop__newsSubtitle">おすすめ商品</p>
             </h2>
             <div class="p-onlineShop__btn">
-              <a href="">
-                <div id="prev" class="p-onlineShop__prevBtn">
-                  <img src="./assets/img/l_arrow.png">
-                </div>
-              </a>
-              <a href="">
-                <div id="next" class="p-onlineShop__nextBtn">
-                  <img src="./assets/img/r_arrow.png">
-                </div>
-              </a>
+              <div id="prev" class="p-onlineShop__prevBtn">
+                <img src="./assets/img/l_arrow.png">
+              </div>
+              <div id="next" class="p-onlineShop__nextBtn">
+                <img src="./assets/img/r_arrow.png">
+              </div>
             </div>
             <a href=""><p class="p-onlineShop__newsMore">ONLINE SHOP NEWS一覧</a>
           </div>
@@ -532,7 +528,7 @@
         </section>
 
         <section class="l-copy__area">
-          <p class="p-pageTop"><a href="">PAGE TOP</a></p>
+          <p id="p-pageTop" class="p-pageTop"><span id="pagetopBtn">PAGE TOP</span></p>
           <div class="l-footer__copy">
             <small class="p-footer__copyText p-sofia">© FELICE ALL RIGHT RESERVED.</small>
           </div>
@@ -549,16 +545,8 @@
       const slide = document.getElementById('slide');
       const prev = document.getElementById('prev');
       const next = document.getElementById('next');
-      const indicator = document.getElementById('indicator');
-      const lists = document.querySelectorAll('.list');
-      const totalSlides = lists.length;
       let count = 0;
       let autoPlayInterval;
-      function updateListBackground() {
-        for (let i = 0; i < lists.length; i++) {
-          lists[i].style.backgroundColor = i === count % totalSlides ? '#000' : '#fff';
-        }
-      }
       function nextClick() {
         slide.classList.remove(`slide${count % totalSlides + 1}`);
         count++;
@@ -587,43 +575,8 @@
         prevClick();
         resetAutoPlayInterval();
       });
-      indicator.addEventListener('click', (event) => {
-        if (event.target.classList.contains('list')) {
-          const index = Array.from(lists).indexOf(event.target);
-          slide.classList.remove(`slide${count % totalSlides + 1}`);
-          count = index;
-          slide.classList.add(`slide${count % totalSlides + 1}`);
-          updateListBackground();
-          resetAutoPlayInterval();
-        }
-      });
       startAutoPlay();
 
-
-
-
-
-
-      const mainBox = document.querySelector('.p-pickUp__contents');
-      const boxes = document.querySelectorAll('.topArticle');
-      let index = 0;
-
-      function boxChange() {
-        boxes.forEach(topArticle => {
-          topArticle.classList.add("hidden");
-        });
-
-        boxes[index].classList.remove("hidden");
-      }
-
-      mainBox.addEventListener('click', () => {
-        index++;
-        if (index === boxes.length) {
-          index = 0;
-        }
-
-        boxChange();
-      });
     </script>
   </body>
 </html>

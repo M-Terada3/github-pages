@@ -58,21 +58,26 @@ main {
     left: 0;
     padding-top: 50px;
     text-align: center;
-    z-index: 999;
+    z-index: 4;
   }
 
-    ul {
+  &__menuLists.panelactive {
+    opacity: 1;
+    z-index:999;
+  }
+
+  &__menuLists ul {
       display: block;
       padding: 0;
       margin: 0;
     }
 
-    li {
+  &__menuLists li {
       list-style: none;
       padding: 10px;
     }
 
-    a {
+  &__menuLists li a {
       color: #000;
       text-decoration: none;
     }
@@ -83,19 +88,20 @@ main {
   .btn{
       width: 100%;
       display: block;
-      width: 39px;
-      height: 39px;
+      width: 36px;
+      height: 36px;
       position: absolute;
-      right: 0;
-      z-index: 999;/*追記：いつも一番上*/
+      right: 10px;
+      top: 30px;
+      z-index: 999;
   }
 
   .bar{
-          width: 20px;
+      width: 26px;
       height: 2px;
       display: block;
       position: absolute;
-      left: 50%;
+      right: 0;
       transform: translateX(-50%);
       background-color: #000;
   }
@@ -105,12 +111,8 @@ main {
   .bar-bottom{ bottom: 10px;}
 
   .btn.close .bar-top{
-      transform: translate(-50%,10px) rotate(45deg);
+      transform: translate(-50%,6px) rotate(45deg);
       transition: transform .3s;
-  }
-
-  .btn.close .bar-middle{
-      opacity: 0;
   }
 
   .btn.close .bar-bottom{
@@ -323,7 +325,6 @@ main {
   }
 
   &__topArticle img {
-
   }
 
   .hidden {
@@ -462,6 +463,7 @@ main {
     background-position: center center;
     background-size: 100% 100%;
     position: absolute;
+    cursor: pointer;
 
     @include pc {
       width: 3vw;
@@ -481,6 +483,7 @@ main {
     background-position: center center;
     background-size: 100% 100%;
     position: absolute;
+    cursor: pointer;
 
     @include pc {
       width: 3vw;
@@ -1065,7 +1068,7 @@ main {
     }
   }
 
-  &__prevBtn a {
+  &__prevBtn img {
     vertical-align: bottom;
   }
 
@@ -1078,7 +1081,7 @@ main {
     }
   }
 
-  &__nextBtn a {
+  &__nextBtn img {
     vertical-align: bottom;
   }
 
@@ -1120,6 +1123,23 @@ main {
 
   &__itemImg {
     position: relative;
+    overflow: hidden;
+  }
+
+  &__itemImg img {
+    object-fit: cover;
+    vertical-align: bottom;
+
+    @include pc {
+      transition:1s all;
+    }
+  }
+
+  &__itemImg img:hover{
+    @include pc {
+      transform:scale(1.2,1.2);
+      transition:1s all;
+    }
   }
 
   &__label {
@@ -1163,10 +1183,8 @@ main {
       display: flex;
       justify-content: space-around;
       overflow-y: hidden;
-
-      width: 300%;
+      width: 210%;
       height: 100%;
-      display: flex;
       transition: all 0.3s;
     }
   }
@@ -1185,24 +1203,10 @@ main {
     list-style-type: none;
 
     @include pc {
+      margin-right: 13px;
       width: 33.33%;
       height: 100%;
       font-size: 16px;
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  &__items li:nth-child(1) {
-    @include pc {
-      transform: translateX(0);
-    }
-  }
-
-  &__items li:nth-child(2) {
-    @include pc {
-      transform: translateX(-33.33%);
     }
   }
 
@@ -1235,7 +1239,16 @@ main {
     border: 1px solid #000000;
     padding: 12px 0;
   }
+}
 
+.slide1 { /* スライドさせるために必要なクラス */
+  transform: translateX(0);
+}
+.slide2 { /* スライドさせるために必要なクラス */
+  transform: translateX(-33.33%);
+}
+.slide3 { /* スライドさせるために必要なクラス */
+  transform: translateX(-66.66%);
 }
 
 .p-shopList {
@@ -1617,25 +1630,35 @@ main {
 }
 
 .p-pageTop {
+  height: 100px;
   width: 10.5vw;
   font-family: serif;
   text-align: center;
   position: fixed;
-  bottom: -15px;
   right: 0;
+  bottom: 20px;
+  display: none;
   z-index: 2;
+  cursor: pointer;
 
   @include sp {
-    width: 20vw;
+    height: 50px;
+    bottom: 0;
   }
 }
-.p-pageTop a {
+
+.p-pageTop:hover {
+  @include pc {
+    transform: translateY(3px);
+  }
+}
+
+
+.p-pageTop span {
   display: block;
-  background: url(../../assets/img/coffee-mill.png) no-repeat center center / 68%;
-  aspect-ratio: 475 / 455;
-  text-decoration: none;
-  color: #000;
-  font-size: 1.2vw;
+  background: url(../../assets/img/coffee-mill.png) no-repeat center center / 60%;
+  width: 10.5vw;
+  font-size: 1vw;
 
   @include sp {
     font-size: 1.8vw;

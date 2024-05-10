@@ -48,18 +48,22 @@ main {
   left: 0;
   padding-top: 50px;
   text-align: center;
+  z-index: 4;
+}
+.l-sp__menuLists.panelactive {
+  opacity: 1;
   z-index: 999;
 }
-.l-sp ul {
+.l-sp__menuLists ul {
   display: block;
   padding: 0;
   margin: 0;
 }
-.l-sp li {
+.l-sp__menuLists li {
   list-style: none;
   padding: 10px;
 }
-.l-sp a {
+.l-sp__menuLists li a {
   color: #000;
   text-decoration: none;
 }
@@ -68,18 +72,19 @@ main {
   .btn {
     width: 100%;
     display: block;
-    width: 39px;
-    height: 39px;
+    width: 36px;
+    height: 36px;
     position: absolute;
-    right: 0;
-    z-index: 999; /*追記：いつも一番上*/
+    right: 10px;
+    top: 30px;
+    z-index: 999;
   }
   .bar {
-    width: 20px;
+    width: 26px;
     height: 2px;
     display: block;
     position: absolute;
-    left: 50%;
+    right: 0;
     transform: translateX(-50%);
     background-color: #000;
   }
@@ -90,11 +95,8 @@ main {
     bottom: 10px;
   }
   .btn.close .bar-top {
-    transform: translate(-50%, 10px) rotate(45deg);
+    transform: translate(-50%, 6px) rotate(45deg);
     transition: transform 0.3s;
-  }
-  .btn.close .bar-middle {
-    opacity: 0;
   }
   .btn.close .bar-bottom {
     transform: translate(-50%, -8px) rotate(-45deg);
@@ -416,6 +418,7 @@ main {
   background-position: center center;
   background-size: 100% 100%;
   position: absolute;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
   .p-topScroll__prevBtn {
@@ -436,6 +439,7 @@ main {
   background-position: center center;
   background-size: 100% 100%;
   position: absolute;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
   .p-topScroll__nextBtn {
@@ -962,7 +966,7 @@ main {
     cursor: pointer;
   }
 }
-.p-onlineShop__prevBtn a {
+.p-onlineShop__prevBtn img {
   vertical-align: bottom;
 }
 .p-onlineShop__nextBtn {
@@ -974,7 +978,7 @@ main {
     cursor: pointer;
   }
 }
-.p-onlineShop__nextBtn a {
+.p-onlineShop__nextBtn img {
   vertical-align: bottom;
 }
 .p-onlineShop__newsMore {
@@ -1012,6 +1016,23 @@ main {
 }
 .p-onlineShop__itemImg {
   position: relative;
+  overflow: hidden;
+}
+.p-onlineShop__itemImg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: bottom;
+}
+@media screen and (min-width: 768px) {
+  .p-onlineShop__itemImg img {
+    transition: 1s all;
+  }
+}
+@media screen and (min-width: 768px) {
+  .p-onlineShop__itemImg img:hover {
+    transform: scale(1.2, 1.2);
+    transition: 1s all;
+  }
 }
 .p-onlineShop__label {
   text-align: center;
@@ -1053,9 +1074,8 @@ main {
     display: flex;
     justify-content: space-around;
     overflow-y: hidden;
-    width: 300%;
+    width: 210%;
     height: 100%;
-    display: flex;
     transition: all 0.3s;
   }
 }
@@ -1072,23 +1092,10 @@ main {
 }
 @media screen and (min-width: 768px) {
   .p-onlineShop__items li {
+    margin-right: 13px;
     width: 33.33%;
     height: 100%;
     font-size: 16px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
-}
-@media screen and (min-width: 768px) {
-  .p-onlineShop__items li:nth-child(1) {
-    transform: translateX(0);
-  }
-}
-@media screen and (min-width: 768px) {
-  .p-onlineShop__items li:nth-child(2) {
-    transform: translateX(-33.33%);
   }
 }
 .p-onlineShop__items li a {
@@ -1114,6 +1121,18 @@ main {
   text-align: center;
   border: 1px solid #000000;
   padding: 12px 0;
+}
+
+.slide1 { /* スライドさせるために必要なクラス */
+  transform: translateX(0);
+}
+
+.slide2 { /* スライドさせるために必要なクラス */
+  transform: translateX(-33.33%);
+}
+
+.slide3 { /* スライドさせるために必要なクラス */
+  transform: translateX(-66.66%);
 }
 
 .p-shopList {
@@ -1482,30 +1501,38 @@ main {
 }
 
 .p-pageTop {
+  height: 100px;
   width: 10.5vw;
   font-family: serif;
   text-align: center;
   position: fixed;
-  bottom: -15px;
   right: 0;
+  bottom: 20px;
+  display: none;
   z-index: 2;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .p-pageTop {
-    width: 20vw;
+    height: 50px;
+    bottom: 0;
   }
 }
 
-.p-pageTop a {
+@media screen and (min-width: 768px) {
+  .p-pageTop:hover {
+    transform: translateY(3px);
+  }
+}
+
+.p-pageTop span {
   display: block;
-  background: url(../../assets/img/coffee-mill.png) no-repeat center center/68%;
-  aspect-ratio: 475/455;
-  text-decoration: none;
-  color: #000;
-  font-size: 1.2vw;
+  background: url(../../assets/img/coffee-mill.png) no-repeat center center/60%;
+  width: 10.5vw;
+  font-size: 1vw;
 }
 @media screen and (max-width: 768px) {
-  .p-pageTop a {
+  .p-pageTop span {
     font-size: 1.8vw;
   }
 }/*# sourceMappingURL=style.css.map */
