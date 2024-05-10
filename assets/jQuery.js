@@ -1,49 +1,17 @@
-//top article//
-const mainBox = document.querySelector('.p-pickUp__contents');
-const boxes = document.querySelectorAll('.topArticle');
-const prev = document.getElementById('p-topScroll__prevBtn');
-const next = document.getElementById('p-topScroll__nextBtn');
-let index = 0;
 
-function boxChange() {
-  boxes.forEach(topArticle => {
-    topArticle.classList.add("hidden");
-  });
 
-  boxes[index].classList.remove("hidden");
-  }
+const images = document.querySelectorAll('p-pickUp__contents img');
+let number = 0;
 
-  function nextClick() {
-    slide.classList.remove(`slide${count % totalSlides + 1}`);
-    count++;
-    slide.classList.add(`slide${count % totalSlides + 1}`);
-    updateListBackground();
-  }
-  function prevClick() {
-    slide.classList.remove(`slide${count % totalSlides + 1}`);
-    count--;
-    if (count < 0) count = totalSlides - 1;
-    slide.classList.add(`slide${count % totalSlides + 1}`);
-    updateListBackground();
-  }
-  function startAutoPlay() {
-    autoPlayInterval = setInterval(nextClick, 3000);
-  }
-  function resetAutoPlayInterval() {
-    clearInterval(autoPlayInterval);
-    startAutoPlay();
-  }
-  next.addEventListener('click', () => {
-    nextClick();
-    resetAutoPlayInterval();
-  });
-  prev.addEventListener('click', () => {
-    prevClick();
-    resetAutoPlayInterval();
-  startAutoPlay();
+function changeImage() {
+  images[number].classList.remove('active');
+  number = (number + 1) % images.length;
+  images[number].classList.add('active');
+}
 
-  boxChange();
-});
+setInterval(changeImage, 2000);
+
+
 
 //hamburger nav//
 $(function() {
@@ -51,6 +19,36 @@ $(function() {
       $('.btn').toggleClass('close');
       $('nav').fadeToggle(500);
     });
+  });
+
+function FixedAnime() {
+  var elemTop = $('#ham-area').offset().top;//#ham-areaの位置まできたら
+  var scroll = $(window).scrollTop();
+  if(scroll <= 20){//上から20pxスクロールされたら
+    $('#btn').addClass('DownMove');//DownMoveというクラス名を除き
+  } else if (scroll >= elemTop){
+      $('#btn').removeClass('UpMove');//#headerについているUpMoveというクラス名を除く
+      $('#btn').addClass('DownMove');//#headerについているDownMoveというクラス名を付与
+
+    }else{
+      if($('#btn').hasClass('DownMove')){//すでに#headerにDownMoveというクラス名がついていたら
+        $('#btn').removeClass('DownMove');//DownMoveというクラス名を除き
+        $('#btn').addClass('UpMove');//UpnMoveというクラス名を付与
+      }
+    }
+}
+
+  // //ナビゲーションをクリックした際のスムーススクロール
+  // $('#g-navi a').click(function () {
+  //   var elmHash = $(this).attr('href'); //hrefの内容を取得
+  //   var pos = Math.round($(elmHash).offset().top-70); //headerの高さを引く
+  //   $('body,html').animate({scrollTop: pos}, 500);//取得した位置にスクロール※数値が大きいほどゆっくりスクロール
+  //   return false;//リンクの無効化
+  // });
+
+  // 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function () {
+    FixedAnime();/* スクロール途中からヘッダーを出現させる関数を呼ぶ*/
   });
 
 

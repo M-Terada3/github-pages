@@ -62,62 +62,64 @@ main {
     z-index: 4;
     animation: UpAnime 0.5s forwards;
   }
-  }
-
-  &__menuLists ul {
-      display: block;
-      padding: 0;
-      margin: 0;
-    }
-
-  &__menuLists li {
-      list-style: none;
-      padding: 10px;
-    }
-
-  &__menuLists li a {
-      color: #000;
-      text-decoration: none;
-    }
-
-
-@include sp {
-  .btn{
-      width: 100%;
-      display: block;
-      width: 36px;
-      height: 36px;
-      position: absolute;
-      right: 10px;
-      top: 30px;
-      z-index: 999;
-  }
-
-  .bar{
-      width: 26px;
-      height: 2px;
-      display: block;
-      position: absolute;
-      right: 0;
-      transform: translateX(-50%);
-      background-color: #000;
-  }
-
-  .bar-top{ top: 10px;}
-
-  .bar-bottom{ bottom: 10px;}
-
-  .btn.close .bar-top{
-      transform: translate(-50%,6px) rotate(45deg);
-      transition: transform .3s;
-  }
-
-  .btn.close .bar-bottom{
-      transform: translate(-50%,-8px) rotate(-45deg);
-      transition: transform .3s;
-  }
 }
 
+&__menuLists ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+&__menuLists li {
+  list-style: none;
+  padding: 10px;
+}
+
+&__menuLists li a {
+  color: #000;
+  text-decoration: none;
+}
+
+@include sp {
+  .btn {
+    width: 100%;
+    display: block;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    z-index: 999;
+  }
+
+  .bar {
+    width: 26px;
+    height: 2px;
+    display: block;
+    position: absolute;
+    right: 0;
+    transform: translateX(-50%);
+    background-color: #000;
+  }
+
+  .bar-top {
+    top: 10px;
+  }
+
+  .bar-bottom {
+    bottom: 10px;
+  }
+
+  .btn.close .bar-top {
+    transform: translate(-50%, 6px) rotate(45deg);
+    transition: transform 0.3s;
+  }
+
+  .btn.close .bar-bottom {
+    transform: translate(-50%, -8px) rotate(-45deg);
+    transition: transform 0.3s;
+  }
+}
 
 .l-main__menu {
   & ul {
@@ -154,7 +156,7 @@ main {
     border-radius: 5px 5px 0 0;
 
     @include pc {
-      transition: all .3s ease 0s;
+      transition: all 0.3s ease 0s;
     }
   }
 
@@ -254,7 +256,7 @@ main {
     color: #fff;
     text-decoration: none;
     outline: none;
-    transition: all .3s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 
   & li a:hover {
@@ -281,20 +283,22 @@ main {
   background-position: top left;
   background-size: 100% 50%;
   margin-bottom: 190px;
+  position: relative;
 
   &__contents {
     margin: 0 80px;
     display: block;
     position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    // width: 100%;
-    // object-fit: cover;
+
+    @include pc {
+      cursor: pointer;
+      overflow: hidden;
+    }
 
     @include sp {
       width: 92vw;
       height: 92vw;
-      margin: 0 auto;
+      margin: 0 auto 100px;
       padding-top: 24px;
     }
   }
@@ -303,24 +307,32 @@ main {
     width: 100%;
     height: 700px;
     object-fit: cover;
+    opacity: 0;
+    transition: all 2s ease;
 
     @include sp {
       width: 100%;
+      position: absolute;
+      height: 100%;
       object-fit: cover;
     }
   }
+  &__article {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 
-    @include pc {
-      transition:1s all;
-    }
+  &__article img.active {
+    opacity: 1;
+  }
 
   &__contents img:hover {
     @include pc {
-      transform:scale(1.2,1.2);
-      transition:1s all;
+      transform: scale(1.2, 1.2);
+      transition: 1s all;
     }
   }
-
 
   .hidden {
     display: none;
@@ -342,7 +354,7 @@ main {
       width: 146px;
       padding: 20px 15px 0 0;
       position: absolute;
-      top: 24px;
+      top: 0;
       right: 0;
       z-index: 2;
       text-align: right;
@@ -382,15 +394,6 @@ main {
   }
 
   &__text {
-    // letter-spacing: 0.1em;
-    // top: 60%;
-    // left: 53px;
-    // background-color: #fff;
-    // border-bottom: 5px solid #84c3cf;
-    // position: absolute;
-    // z-index: 2;
-    // font-size: 1.6vw;
-    // padding: 30px;
     letter-spacing: 0.1em;
     top: 62%;
     left: -27px;
@@ -402,9 +405,9 @@ main {
     padding: 30px;
 
     @include sp {
-      width: 96%;
-      top: 100%;
-      left: -12px;
+      width: 90%;
+      top: 70%;
+      left: 12px;
       margin: 0;
       padding: 16px;
       font-size: 3.6vw;
@@ -443,58 +446,57 @@ main {
   @include sp {
     display: flex;
     justify-content: space-between;
-
   }
 
-  &__btn {
-    @include pc {
-      position: absolute;
-      right: 60px;
-      bottom:18%;
-    }
-  }
+  // &__btn {
+  //   @include pc {
+  //     position: absolute;
+  //     right: 60px;
+  //     bottom:18%;
+  //   }
+  // }
 
-  &__prevBtn {
-    aspect-ratio: 1 / 1;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
-    position: absolute;
-    cursor: pointer;
+  // &__prevBtn {
+  //   aspect-ratio: 1 / 1;
+  //   background-repeat: no-repeat;
+  //   background-position: center center;
+  //   background-size: 100% 100%;
+  //   position: absolute;
+  //   cursor: pointer;
 
-    @include pc {
-      width: 3vw;
-    }
+  //   @include pc {
+  //     width: 3vw;
+  //   }
 
-    @include sp {
-      width: 6vw;
-    }
-  }
-  &__prevBtn img {
-    vertical-align: bottom;
-  }
+  //   @include sp {
+  //     width: 6vw;
+  //   }
+  // }
+  // &__prevBtn img {
+  //   vertical-align: bottom;
+  // }
 
-  &__nextBtn {
-    aspect-ratio: 1 / 1;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
-    position: absolute;
-    cursor: pointer;
+  // &__nextBtn {
+  //   aspect-ratio: 1 / 1;
+  //   background-repeat: no-repeat;
+  //   background-position: center center;
+  //   background-size: 100% 100%;
+  //   position: absolute;
+  //   cursor: pointer;
 
-    @include pc {
-      width: 3vw;
-      margin-top: clamp(50px, 7.5vw, 100px);
-    }
+  //   @include pc {
+  //     width: 3vw;
+  //     margin-top: clamp(50px, 7.5vw, 100px);
+  //   }
 
-    @include sp {
-      width: 6vw;
-      margin-left: 36px;
-    }
-  }
-  &__nextBtn img {
-    vertical-align: bottom
-  }
+  //   @include sp {
+  //     width: 6vw;
+  //     margin-left: 36px;
+  //   }
+  // }
+  // &__nextBtn img {
+  //   vertical-align: bottom
+  // }
 
   &__text {
     position: relative;
@@ -524,18 +526,18 @@ main {
   }
 
   @keyframes pathmove {
-    0%{
-      height:0;
-      top:30px;
+    0% {
+      height: 0;
+      top: 30px;
       opacity: 0;
     }
-    30%{
-      height:46px;
+    30% {
+      height: 46px;
       opacity: 1;
     }
-    100%{
-      height:16px;
-      top:50px;
+    100% {
+      height: 16px;
+      top: 50px;
       opacity: 0;
     }
 
@@ -580,9 +582,13 @@ main {
       right: 24px;
       bottom: -240px;
     }
+
+    @include sp {
+      text-align: right;
+      margin: 100px 46px;
+    }
   }
 }
-
 
 .l-mainTop {
   &__contents {
@@ -602,7 +608,7 @@ main {
     width: 12.5vw;
     height: auto;
     margin: 0px 20px 20px 20px;
-    transition: all .3s ease 0s;
+    transition: all 0.3s ease 0s;
 
     @include sp {
       display: none;
@@ -665,7 +671,6 @@ main {
   }
 
   &__list {
-
     @include pc {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -692,7 +697,6 @@ main {
   }
 
   &__list article:nth-of-type(1) {
-
     @include pc {
       padding: 0 56px 56px 0;
       border-bottom: 1px solid #d2d2d2;
@@ -717,7 +721,6 @@ main {
   }
 
   &__list article:nth-of-type(2) {
-
     @include pc {
       padding: 0 0 56px 56px;
       border-bottom: 1px solid #d2d2d2;
@@ -727,7 +730,6 @@ main {
   }
 
   &__list article:nth-of-type(3) {
-
     @include pc {
       padding: 56px 56px 56px 0;
       grid-row: 3 / 5;
@@ -757,7 +759,6 @@ main {
   }
 
   &__list article:nth-of-type(4) {
-
     @include pc {
       display: flex;
       gap: 25px;
@@ -795,7 +796,6 @@ main {
   }
 
   &__list article:nth-of-type(5) {
-
     @include pc {
       display: flex;
       gap: 25px;
@@ -812,7 +812,6 @@ main {
   }
 
   &__list article:nth-of-type(6) {
-
     @include pc {
       padding: 56px 56px 0 0;
       border-top: 1px solid #d2d2d2;
@@ -837,7 +836,6 @@ main {
   }
 
   &__list article:nth-of-type(7) {
-
     @include pc {
       padding: 56px 0 0 56px;
       border-top: 1px solid #d2d2d2;
@@ -894,14 +892,14 @@ main {
     vertical-align: bottom;
 
     @include pc {
-      transition:1s all;
+      transition: 1s all;
     }
   }
 
-  &__img img:hover{
+  &__img img:hover {
     @include pc {
-      transform:scale(1.2,1.2);
-      transition:1s all;
+      transform: scale(1.2, 1.2);
+      transition: 1s all;
     }
   }
 
@@ -909,7 +907,7 @@ main {
     font-size: 13px;
 
     @include pc {
-      transition: all .3s ease 0s;
+      transition: all 0.3s ease 0s;
     }
   }
 
@@ -929,7 +927,7 @@ main {
     -webkit-line-clamp: 2;
 
     @include pc {
-      transition: all .3s ease 0s;
+      transition: all 0.3s ease 0s;
     }
 
     @include sp {
@@ -953,8 +951,8 @@ main {
     -webkit-line-clamp: 2;
 
     @include pc {
-    margin-bottom: 80px;
-    transition: all .3s ease 0s;
+      margin-bottom: 80px;
+      transition: all 0.3s ease 0s;
     }
   }
 
@@ -998,7 +996,13 @@ main {
       background-repeat: no-repeat;
       background-position: 100% 0;
       background-size: 200% auto;
-      background-image: linear-gradient(to right, #efece4 0%, #efece4 50%, #fff 50%, #fff 100%);
+      background-image: linear-gradient(
+        to right,
+        #efece4 0%,
+        #efece4 50%,
+        #fff 50%,
+        #fff 100%
+      );
       transition: color 0.6s, background-position 0.6s;
     }
   }
@@ -1026,7 +1030,6 @@ main {
   }
 
   &__leftBox {
-
     @include pc {
       width: 30%;
     }
@@ -1051,41 +1054,9 @@ main {
     margin: 0;
   }
 
-  &__btn {
-    display: flex;
-
-    @include sp {
-      display: none;
-    }
-  }
-
-  &__prevBtn {
-    @include pc {
-      width: 3vw;
-      cursor: pointer;
-    }
-  }
-
-  &__prevBtn img {
-    vertical-align: bottom;
-  }
-
-  &__nextBtn {
-    margin-left: 10px;
-
-    @include pc {
-      width: 3vw;
-      cursor: pointer;
-    }
-  }
-
-  &__nextBtn img {
-    vertical-align: bottom;
-  }
-
   &__newsMore {
     text-align: center;
-    margin: 64px auto;
+    margin-top: 100px;
 
     @include sp {
       display: none;
@@ -1102,7 +1073,13 @@ main {
     background-repeat: no-repeat;
     background-position: 100% 0;
     background-size: 200% auto;
-    background-image: linear-gradient(to right, #efece4 0%, #efece4 50%, #fff 50%, #fff 100%);
+    background-image: linear-gradient(
+      to right,
+      #efece4 0%,
+      #efece4 50%,
+      #fff 50%,
+      #fff 100%
+    );
     transition: color 0.6s, background-position 0.6s;
   }
 
@@ -1129,14 +1106,14 @@ main {
     vertical-align: bottom;
 
     @include pc {
-      transition:1s all;
+      transition: 1s all;
     }
   }
 
-  &__itemImg img:hover{
+  &__itemImg img:hover {
     @include pc {
-      transform:scale(1.2,1.2);
-      transition:1s all;
+      transform: scale(1.2, 1.2);
+      transition: 1s all;
     }
   }
 
@@ -1180,8 +1157,6 @@ main {
     @include pc {
       display: flex;
       justify-content: space-around;
-      overflow-y: hidden;
-      width: 210%;
       height: 100%;
       transition: all 0.3s;
     }
@@ -1235,16 +1210,6 @@ main {
   }
 }
 
-.slide1 { /* スライドさせるために必要なクラス */
-  transform: translateX(0);
-}
-.slide2 { /* スライドさせるために必要なクラス */
-  transform: translateX(-33.33%);
-}
-.slide3 { /* スライドさせるために必要なクラス */
-  transform: translateX(-66.66%);
-}
-
 .p-shopList {
   margin: 54px 24px;
   border-top: 1px solid #d2d2d2;
@@ -1292,7 +1257,13 @@ main {
       background-repeat: no-repeat;
       background-position: 100% 0;
       background-size: 200% auto;
-      background-image: linear-gradient(to right, #efece4 0%, #efece4 50%, #fff 50%, #fff 100%);
+      background-image: linear-gradient(
+        to right,
+        #efece4 0%,
+        #efece4 50%,
+        #fff 50%,
+        #fff 100%
+      );
       transition: color 0.6s, background-position 0.6s;
     }
   }
@@ -1371,7 +1342,7 @@ main {
 
     @include pc {
       background-color: #fff;
-      transition: all  0.3s ease;
+      transition: all 0.3s ease;
     }
   }
 
@@ -1436,15 +1407,15 @@ main {
 
     @include pc {
       background-color: #fff;
-      transition: all  0.3s ease;
+      transition: all 0.3s ease;
     }
   }
 
   &__list a:hover {
     @include pc {
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    -ms-filter: "alpha(opacity=70)";
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+      -ms-filter: "alpha(opacity=70)";
     }
   }
 
@@ -1474,7 +1445,7 @@ main {
     width: 12.5vw;
     height: auto;
     margin: 0px 20px 20px 20px;
-    transition: all .3s ease 0s;
+    transition: all 0.3s ease 0s;
 
     @include sp {
       display: none;
@@ -1482,9 +1453,9 @@ main {
   }
 
   &__logo:hover {
-      opacity: 0.7;
-      filter: alpha(opacity=70);
-      -ms-filter: "alpha(opacity=70)";
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "alpha(opacity=70)";
   }
 
   &__topArea {
@@ -1524,7 +1495,7 @@ main {
 
     @include pc {
       background-color: #fff;
-      transition: all  0.3s ease;
+      transition: all 0.3s ease;
     }
 
     @include sp {
@@ -1556,10 +1527,9 @@ main {
   }
 
   &__iconList a {
-
     @include pc {
       background-color: #fff;
-      transition: all  0.3s ease;
+      transition: all 0.3s ease;
     }
 
     @include sp {
@@ -1574,7 +1544,7 @@ main {
       filter: alpha(opacity=70);
       -ms-filter: "alpha(opacity=70)";
     }
-}
+  }
 
   &__menuList2 {
     display: flex;
@@ -1608,7 +1578,7 @@ main {
     padding: 16px 2px;
     background-color: #efece4;
     border-radius: 5px;
-    transition: all .3s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 
   &__menuList2 li a:hover {
@@ -1648,7 +1618,8 @@ main {
 
 .p-pageTop span {
   display: block;
-  background: url(../../assets/img/coffee-mill.png) no-repeat center center / 60%;
+  background: url(../../assets/img/coffee-mill.png) no-repeat center center /
+    60%;
   width: 10.5vw;
   font-size: 1vw;
 
