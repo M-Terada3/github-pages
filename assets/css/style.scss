@@ -442,15 +442,20 @@ main {
   }
 }
 
-.p-topScroll {
+.p-pcScroll {
   margin: 50px auto;
+
+  @include sp {
+    display: none;
+  }
 
   &__text {
     position: relative;
+    writing-mode: vertical-rl;
+    margin: 50px auto;
 
-    @include pc {
-      writing-mode: vertical-rl;
-      margin: 50px auto;
+    @include sp {
+      display: none;
     }
   }
 
@@ -463,10 +468,6 @@ main {
     background: #000;
     animation: pathmove 1.4s ease-in-out infinite;
     margin-top: 16px;
-
-    @include sp {
-      margin-top: -8px;
-    }
   }
 
   @keyframes pathmove {
@@ -484,23 +485,6 @@ main {
       top: 50px;
       opacity: 0;
     }
-
-    // @include sp {
-    //   0%{
-    //     height:0;
-    //     top:30px;
-    //     opacity: 0;
-    //   }
-    //   30%{
-    //     height:30px;
-    //     opacity: 1;
-    //   }
-    //   100%{
-    //     height:20px;
-    //     top:50px;
-    //     opacity: 0;
-    //   }
-    // }
   }
 
   &__text::before {
@@ -514,23 +498,70 @@ main {
     z-index: 1;
     width: 28px;
     bottom: -76px;
-
-    @include sp {
-      bottom: -48px;
-    }
   }
 
   &__Down {
-    @include pc {
-      position: absolute;
-      right: 24px;
-      bottom: 80px;
-    }
+    position: absolute;
+    right: 24px;
+    bottom: 80px;
+  }
+}
 
-    @include sp {
-      text-align: right;
-      margin: 10px 25px;
+.p-spScroll {
+  margin: 50px auto;
+
+  @include pc {
+    display: none;
+  }
+
+  &__text {
+    position: relative;
+  }
+
+  &__text::after {
+    content: "";
+    position: absolute;
+    right: 55%;
+    width: 1px;
+    height: 100%;
+    background: #000;
+    animation: pathmove 1.4s ease-in-out infinite;
+    margin-top: -8px;
+  }
+
+  @keyframes pathmove {
+    0% {
+      height: 0;
+      top: 30px;
+      opacity: 0;
     }
+    30% {
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      height: 20px;
+      top: 50px;
+      opacity: 0;
+    }
+  }
+
+  &__text::before {
+    content: "";
+    display: inline-block;
+    background: url(../../assets/img/d_arrow.png) no-repeat center center / 100%;
+    aspect-ratio: 3 / 2;
+    position: absolute;
+    left: 43%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 28px;
+    bottom: -55px;
+  }
+
+  &__Down {
+    text-align: right;
+    margin: 80px 25px;
   }
 }
 
