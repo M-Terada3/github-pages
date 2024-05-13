@@ -1,14 +1,9 @@
-@charset "UTF-8";
 body {
   margin: 0;
 }
 
 img {
   width: 100%;
-}
-
-.l-wrap {
-  min-height: 100vh;
 }
 
 header {
@@ -41,6 +36,7 @@ main {
 .l-sp__menuLists {
   display: none;
   background-color: #fff;
+  font-family: serif;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -48,11 +44,8 @@ main {
   left: 0;
   padding-top: 50px;
   text-align: center;
-  z-index: 4;
-}
-.l-sp__menuLists.panelactive {
-  opacity: 1;
-  z-index: 999;
+  z-index: 3;
+  animation: UpAnime 0.5s forwards;
 }
 .l-sp__menuLists ul {
   display: block;
@@ -251,39 +244,52 @@ main {
   background-position: top left;
   background-size: 100% 50%;
   margin-bottom: 190px;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .p-pickUp {
+    background-size: 100% 25%;
+  }
 }
 .p-pickUp__contents {
   margin: 0 80px;
   display: block;
   position: relative;
-  cursor: pointer;
-  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .p-pickUp__contents {
     width: 92vw;
     height: 92vw;
-    margin: 0 auto;
+    margin: 0 auto 100px;
     padding-top: 24px;
   }
 }
-.p-pickUp__contents img {
+.p-pickUp__topImg {
+  cursor: pointer;
+  overflow: hidden;
+}
+.p-pickUp__article img {
   width: 100%;
-  height: 700px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all 2s ease;
 }
 @media screen and (max-width: 768px) {
-  .p-pickUp__contents img {
+  .p-pickUp__article img {
     width: 100%;
+    position: absolute;
+    height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
 }
-@media screen and (min-width: 768px) {
-  .p-pickUp {
-    transition: 1s all;
-  }
+.p-pickUp__article {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.p-pickUp__article img.active {
+  opacity: 1;
 }
 @media screen and (min-width: 768px) {
   .p-pickUp__contents img:hover {
@@ -300,7 +306,7 @@ main {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 1;
   text-align: right;
   background-color: #fff;
   aspect-ratio: 20/19;
@@ -309,12 +315,12 @@ main {
 }
 @media screen and (max-width: 768px) {
   .p-pickUp__label {
-    width: 146px;
+    width: 130px;
     padding: 20px 15px 0 0;
     position: absolute;
-    top: 24px;
+    top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 1;
     text-align: right;
     background-color: #fff;
     aspect-ratio: 20/19;
@@ -324,13 +330,7 @@ main {
 }
 .p-pickUp__label span {
   display: block;
-  text-align: center;
   letter-spacing: 0.1em;
-}
-.p-pickUp__labelBox {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-left: auto;
 }
 .p-pickUp__labelTop {
   font-size: 18px;
@@ -357,14 +357,14 @@ main {
   background-color: #fff;
   border-bottom: 5px solid #84c3cf;
   position: absolute;
-  z-index: 3;
+  z-index: 2;
   font-size: 1.6vw;
   padding: 30px;
 }
 @media screen and (max-width: 768px) {
   .p-pickUp__text {
     width: 96%;
-    top: 100%;
+    top: 85%;
     left: -12px;
     margin: 0;
     padding: 16px;
@@ -400,61 +400,6 @@ main {
 
 .p-topScroll {
   margin: 50px auto;
-}
-@media screen and (max-width: 768px) {
-  .p-topScroll {
-    display: flex;
-    align-items: flex-end;
-  }
-}
-.p-topScroll__btn {
-  position: absolute;
-  right: 60px;
-  bottom: 18%;
-}
-.p-topScroll__prevBtn {
-  aspect-ratio: 1/1;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
-  position: absolute;
-  cursor: pointer;
-}
-@media screen and (min-width: 768px) {
-  .p-topScroll__prevBtn {
-    width: 3vw;
-  }
-}
-@media screen and (max-width: 768px) {
-  .p-topScroll__prevBtn {
-    width: 6vw;
-  }
-}
-.p-topScroll__prevBtn img {
-  vertical-align: bottom;
-}
-.p-topScroll__nextBtn {
-  aspect-ratio: 1/1;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
-  position: absolute;
-  cursor: pointer;
-}
-@media screen and (min-width: 768px) {
-  .p-topScroll__nextBtn {
-    width: 3vw;
-    margin-top: clamp(50px, 7.5vw, 100px);
-  }
-}
-@media screen and (max-width: 768px) {
-  .p-topScroll__nextBtn {
-    width: 6vw;
-    margin-left: 36px;
-  }
-}
-.p-topScroll__nextBtn img {
-  vertical-align: bottom;
 }
 .p-topScroll__text {
   position: relative;
@@ -504,7 +449,7 @@ main {
   position: absolute;
   left: 43%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 1;
   width: 28px;
   bottom: -76px;
 }
@@ -513,11 +458,18 @@ main {
     bottom: -48px;
   }
 }
-
-.p-topScroll__Down {
-  position: absolute;
-  right: 24px;
-  bottom: -240px;
+@media screen and (min-width: 768px) {
+  .p-topScroll__Down {
+    position: absolute;
+    right: 24px;
+    bottom: 80px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .p-topScroll__Down {
+    text-align: right;
+    margin: 10px 25px;
+  }
 }
 
 .l-mainTop__contents {
@@ -586,14 +538,12 @@ main {
 }
 .p-hotNews__icon {
   width: 10%;
-  height: 100%;
   padding: 12px 32px;
 }
 @media screen and (max-width: 768px) {
   .p-hotNews__icon {
-    width: 10%;
-    height: 100%;
-    padding: 20px;
+    width: 50px;
+    padding: 12px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -767,7 +717,7 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
   background-color: #7e7562;
   margin: 0;
   padding: 5px 0;
@@ -783,7 +733,7 @@ main {
   position: absolute;
   top: 0;
   right: -10px;
-  z-index: 3;
+  z-index: 1;
 }
 .p-hotNews__label a {
   padding: 7px 10px 8px 15px;
@@ -952,38 +902,9 @@ main {
   font-size: 16px;
   margin: 0;
 }
-.p-onlineShop__btn {
-  display: flex;
-}
-@media screen and (max-width: 768px) {
-  .p-onlineShop__btn {
-    display: none;
-  }
-}
-@media screen and (min-width: 768px) {
-  .p-onlineShop__prevBtn {
-    width: 3vw;
-    cursor: pointer;
-  }
-}
-.p-onlineShop__prevBtn img {
-  vertical-align: bottom;
-}
-.p-onlineShop__nextBtn {
-  margin-left: 10px;
-}
-@media screen and (min-width: 768px) {
-  .p-onlineShop__nextBtn {
-    width: 3vw;
-    cursor: pointer;
-  }
-}
-.p-onlineShop__nextBtn img {
-  vertical-align: bottom;
-}
 .p-onlineShop__newsMore {
   text-align: center;
-  margin: 64px auto;
+  margin-top: 100px;
 }
 @media screen and (max-width: 768px) {
   .p-onlineShop__newsMore {
@@ -1073,8 +994,6 @@ main {
   .p-onlineShop__items {
     display: flex;
     justify-content: space-around;
-    overflow-y: hidden;
-    width: 210%;
     height: 100%;
     transition: all 0.3s;
   }
@@ -1121,18 +1040,6 @@ main {
   text-align: center;
   border: 1px solid #000000;
   padding: 12px 0;
-}
-
-.slide1 { /* スライドさせるために必要なクラス */
-  transform: translateX(0);
-}
-
-.slide2 { /* スライドさせるために必要なクラス */
-  transform: translateX(-33.33%);
-}
-
-.slide3 { /* スライドさせるために必要なクラス */
-  transform: translateX(-66.66%);
 }
 
 .p-shopList {
@@ -1514,9 +1421,7 @@ main {
 }
 @media screen and (max-width: 768px) {
   .p-pageTop {
-    width: 40.5vw;
-    height: 80%;
-    bottom: 0;
+    width: 20vw;
   }
 }
 
@@ -1535,6 +1440,6 @@ main {
 @media screen and (max-width: 768px) {
   .p-pageTop span {
     font-size: 1.8vw;
-    width: 20.5vw;
+    width: 20vw;
   }
 }/*# sourceMappingURL=style.css.map */

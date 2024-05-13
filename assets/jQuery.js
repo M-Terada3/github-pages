@@ -15,8 +15,14 @@ $(function () {
     $(".btn").toggleClass("close");
     $("nav").fadeToggle(500);
   });
+  // $(window).scroll(function () {
+  //   if ($(window).scrollTop() > 1) {
+  //     $("btn").fadeIn(300).css("display", "flex");
+  //   } else {
+  //     $("btn").fadeOut(300);
+  //   }
+  // });
 });
-
 
 //page-top//
 $(function () {
