@@ -16,9 +16,7 @@ body {
 img {
   width: 100%;
 }
-.l-wrap {
-  // min-height: 100vh;
-}
+
 header {
   display: flex;
   align-items: center;
@@ -33,6 +31,77 @@ main {
   display: block;
   margin: auto;
   font-family: serif;
+  padding-top: 0 !important;
+}
+
+.l-pc {
+  &__fixNav {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: -80px;
+    left: 0;
+    z-index: 6;
+    transition: all 0.3s ease-in-out;
+    visibility: hidden;
+
+    @include sp {
+      display: none;
+    }
+  }
+
+  &__fixNav.is-show {
+    top: 0;
+    visibility: visible;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__fixLogo {
+    width: 80px;
+    margin: 8px 16px;
+    vertical-align: bottom;
+  }
+
+  &__fixMenu {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+  }
+
+  &__fixMenu li {
+    font-size: 16px;
+    margin-right: 30px;
+    list-style-type: none;
+  }
+
+  &__fixMenu li a {
+    text-decoration: none;
+    color: #000000;
+    padding: 16px 2px;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+  }
+
+  &__fixLogo a {
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+  }
+
+  &__fixLogo a:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "alpha(opacity=70)";
+  }
+
+  &__fixMenu li a:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "alpha(opacity=70)";
+  }
 }
 
 .l-sp {
@@ -81,14 +150,23 @@ main {
 
 @include sp {
   .btn {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 36px;
+    right: 12px;
+    z-index: 5;
+  }
+
+  .fixBtn {
     width: 100%;
-    display: block;
     width: 36px;
     height: 36px;
     position: fixed;
-    right: 10px;
-    top: 30px;
-    z-index: 999;
+    top: 60px;
+    right: 12px;
+    z-index: 5;
+    display: none;
   }
 
   .bar {
@@ -118,24 +196,31 @@ main {
     transform: translate(-50%, -8px) rotate(-45deg);
     transition: transform 0.3s;
   }
-}
 
-.l-main__menu {
-  @include sp {
-    position: fixed;
-    z-index: 5;
-    width: 100%;
-    height: 70px;
-    // position: absolute;
+  .fixBtn.close .bar-top {
+    transform: translate(-50%, 6px) rotate(45deg);
+    transition: transform 0.3s;
   }
 
-  // & fixed {
-  //   position: fixed;
-  //   top: 0;
-  //   transition: 0.8s all;
-  // }
+  .fixBtn.close .bar-bottom {
+    transform: translate(-50%, -8px) rotate(-45deg);
+    transition: transform 0.3s;
+  }
+}
 
-  & ul {
+.l-main {
+  &__menu.m_fixed {
+    @include sp {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 6;
+      width: 100%;
+      height: 70px;
+    }
+  }
+
+  &__menu ul {
     display: flex;
     margin: 0;
     padding: 0;
@@ -147,20 +232,20 @@ main {
     }
   }
 
-  & li {
+  &__menu li {
     width: 25%;
     text-align: center;
     list-style-type: none;
     padding: 2px 2px 0 0;
   }
 
-  & ul li.current a {
+  &__menu ul li.current a {
     background: url(../../assets/img/header-color.jpg) no-repeat center center /
       1400px;
     color: #fff;
   }
 
-  & li a {
+  &__menu li a {
     display: block;
     text-decoration: none;
     color: #000000;
@@ -173,45 +258,12 @@ main {
     }
   }
 
-  & li a:hover {
+  &__menu li a:hover {
     @include pc {
       opacity: 0.7;
       filter: alpha(opacity=70);
       -ms-filter: "alpha(opacity=70)";
     }
-  }
-}
-
-.l-main__menu.UpMove {
-  position: fixed;
-  width: 100%;
-  animation: UpAnime 0.5s forwards;
-}
-
-@keyframes UpAnime {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-}
-
-.l-main__menu.DownMove {
-  position: fixed;
-  width: 100%;
-  animation: DownAnime 0.5s forwards;
-}
-@keyframes DownAnime {
-  from {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -334,18 +386,12 @@ main {
 
   @include sp {
     background-size: 100% 25%;
-    padding-top: 45px;
   }
 
   &__contents {
     margin: 0 80px;
     display: block;
     position: relative;
-
-    @include pc {
-      // cursor: pointer;
-      // overflow: hidden;
-    }
 
     @include sp {
       width: 92vw;
@@ -362,8 +408,6 @@ main {
 
   &__article img {
     width: 100%;
-    object-fit: cover;
-    // opacity: 0;
     transition: all 2s ease;
 
     @include sp {
@@ -388,10 +432,6 @@ main {
       transform: scale(1.2, 1.2);
       transition: 1s all;
     }
-  }
-
-  .hidden {
-    display: none;
   }
 
   &__label {
@@ -656,7 +696,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 8vw 0 6vw 0;
 
     @include sp {
       margin: 16vw 0 0 0;
@@ -707,7 +746,6 @@ main {
 
     @include sp {
       width: 100%;
-      margin: 2vw auto;
     }
   }
 
@@ -758,7 +796,7 @@ main {
     }
 
     @include sp {
-      width: 50%;
+      width: 49%;
       float: right;
       margin: 0;
     }
@@ -768,7 +806,7 @@ main {
     content: "";
     display: inline-block;
     width: 1.5px;
-    height: 88%;
+    height: 86%;
     position: absolute;
     top: 56px;
     right: 0;
@@ -793,7 +831,7 @@ main {
     }
 
     @include sp {
-      width: 50%;
+      width: 49%;
       margin: 0;
     }
   }
@@ -1056,6 +1094,10 @@ main {
     }
   }
 
+  &__leftBox a {
+    text-decoration: none;
+  }
+
   &__textBox {
     text-align: left;
     margin-bottom: 40px;
@@ -1078,33 +1120,35 @@ main {
   &__newsMore {
     text-align: center;
     margin-top: 100px;
+  }
+
+  &__newsMore {
+    display: block;
+    color: #000;
+    font-size: 13px;
+    border: 1px solid #000000;
+    padding: 12px 0;
+
+    @include pc {
+      background-repeat: no-repeat;
+      background-position: 100% 0;
+      background-size: 200% auto;
+      background-image: linear-gradient(
+        to right,
+        #efece4 0%,
+        #efece4 50%,
+        #fff 50%,
+        #fff 100%
+      );
+      transition: color 0.6s, background-position 0.6s;
+    }
 
     @include sp {
       display: none;
     }
   }
 
-  &__newsMore a {
-    display: block;
-    text-decoration: none;
-    font-size: 12px;
-    color: #000;
-    border: 1px solid #000000;
-    padding: 12px 0;
-    background-repeat: no-repeat;
-    background-position: 100% 0;
-    background-size: 200% auto;
-    background-image: linear-gradient(
-      to right,
-      #efece4 0%,
-      #efece4 50%,
-      #fff 50%,
-      #fff 100%
-    );
-    transition: color 0.6s, background-position 0.6s;
-  }
-
-  &__newsMore a:hover {
+  &__newsMore:hover {
     background-position: 0 0;
   }
 
@@ -1467,6 +1511,7 @@ main {
     height: auto;
     margin: 0px 20px 20px 20px;
     transition: all 0.3s ease 0s;
+    vertical-align: bottom;
 
     @include sp {
       display: none;
@@ -1570,7 +1615,6 @@ main {
   &__menuList2 {
     display: flex;
     margin: 0 40px 40px;
-    padding: 0;
     background-color: #ccc4ad;
     font-size: 1.2vw;
     gap: 2px;

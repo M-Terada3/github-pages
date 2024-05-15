@@ -11,18 +11,17 @@
     <div class="l-wrap">
       <header>
         <div class="l-sp__header">
-          <a href=""
-            ><img
-              class="l-sp__headerLogo"
-              src="./assets/img/main logo.png"
-              alt="Felice"
-          /></a>
+          <a href=""><img class="l-sp__headerLogo" src="./assets/img/main logo.png" alt="Felice"></a>
         </div>
         <p class="l-sp__phrase">
           人にも地球にもやさしい<br />オーガニックカフェ
         </p>
-        <div class="l-sp__hamburgerNav">
+        <div id="hamNav" class="l-sp__hamburgerNav">
           <div class="btn">
+            <span class="bar bar-top"></span>
+            <span class="bar bar-bottom"></span>
+          </div>
+          <div class="fixBtn">
             <span class="bar bar-top"></span>
             <span class="bar bar-bottom"></span>
           </div>
@@ -39,6 +38,27 @@
           </nav>
         </div>
       </header>
+      <nav id="fixNav" class="l-pc__fixNav">
+        <div class="l-pc__inner">
+          <div class="l-pc__fixLogo">
+            <a href=""><img  src="./assets/img/main logo.png" alt="Felice"></a>
+          </div>
+          <ul class="l-pc__fixMenu p-sofia">
+            <li>
+              <a href="">Feliceについて</a>
+            </li>
+            <li>
+              <a href="">Feliceのこだわり</a>
+            </li>
+            <li>
+              <a href="">ポイントを集めよう</a>
+            </li>
+            <li>
+              <a href="">News一覧</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
       <nav id="mainMenu" class="l-main__menu p-sofia">
         <ul>
@@ -108,7 +128,7 @@
           </div>
         </section>
 
-        <section id="ham-area" class="p-pickUp">
+        <section class="p-pickUp">
           <div class="p-pickUp__contents">
             <article class="p-pickUp__article active">
               <div class="p-pickUp__label">
@@ -121,58 +141,6 @@
               </h2>
               <div class="p-pickUp__topImg">
                 <img src="./assets/img/top_img.jpg" alt="image" />
-              </div>
-            </article>
-            <article class="p-pickUp__article hidden">
-              <div class="p-pickUp__label">
-                <span class="p-pickUp__labelTop">PICK UP</span>
-                <span class="p-pickUp__labelBtm">NEWS</span>
-              </div>
-              <h2 class="p-pickUp__text">
-                <date>2023.04.08</date
-                ><br />ランチメニュー限定だった大人気のミニフランスパンが4月より通常販売開始しました！<br />焼き立てパンの食べ放題も終日お楽しみいただけます！
-              </h2>
-              <div class="p-pickUp__topImg">
-                <img src="./assets/img/bread-roll.jpg" alt="image" />
-              </div>
-            </article>
-            <article class="p-pickUp__article hidden">
-              <div class="p-pickUp__label">
-                <span class="p-pickUp__labelTop">PICK UP</span>
-                <span class="p-pickUp__labelBtm">NEWS</span>
-              </div>
-              <h2 class="p-pickUp__text">
-                <date>2023.04.01</date
-                ><br />4/1（月）グランドオープン！<br />三軒茶屋店で味わうお好みの一杯はいかが？
-              </h2>
-              <div class="p-pickUp__topImg">
-                <img src="./assets/img/coffee-maker.jpg" alt="image" />
-              </div>
-            </article>
-            <article class="p-pickUp__article hidden">
-              <div class="p-pickUp__label">
-                <span class="p-pickUp__labelTop">PICK UP</span>
-                <span class="p-pickUp__labelBtm">NEWS</span>
-              </div>
-              <h2 class="p-pickUp__text">
-                <date>2023.03.22</date
-                ><br />お気に入りのコーヒー豆が見つかりますように。<br />Feliceこだわりのコーヒー豆を発売しております！
-              </h2>
-              <div class="p-pickUp__topImg">
-                <img src="./assets/img/coffee1.jpg" alt="image" />
-              </div>
-            </article>
-            <article class="p-pickUp__article hidden">
-              <div class="p-pickUp__label">
-                <span class="p-pickUp__labelTop">PICK UP</span>
-                <span class="p-pickUp__labelBtm">NEWS</span>
-              </div>
-              <h2 class="p-pickUp__text">
-                <date>2023.03.19</date
-                ><br />定番の90分飲み放題コースを飲み放題120分に延長いたしました！<br />歓送迎会、誕生日や記念日、忘年会などにおすすめです！
-              </h2>
-              <div class="p-pickUp__topImg">
-                <img src="./assets/img/cheese_pizza.jpg" alt="image" />
               </div>
             </article>
           </div>
@@ -402,11 +370,8 @@
               <p class="p-onlineShop__newsTitle">ONLINE SHOP NEWS</p>
               <p class="p-onlineShop__newsSubtitle">おすすめ商品</p>
             </h2>
-            <a href=""
-              ><p class="p-onlineShop__newsMore p-sofia">
-                ONLINE SHOP NEWS一覧
-              </p></a
-            >
+            <a class="p-onlineShop__newsMore" href=""><span class="p-sofia">
+                ONLINE SHOP NEWS一覧</span></a>
           </div>
           <div class="p-onlineShop__rightBox">
             <ul id="slide" class="p-onlineShop__items">
