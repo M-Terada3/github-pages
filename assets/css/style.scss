@@ -381,7 +381,6 @@ main {
   background: url(../../assets/img/header-color.jpg) no-repeat center / 1400px;
   background-position: top left;
   background-size: 100% 50%;
-  margin-bottom: 190px;
   position: relative;
 
   @include sp {
@@ -686,10 +685,10 @@ main {
 }
 
 .p-hotNews {
-  margin: 50px;
+  margin: 80px 50px;
 
   @include sp {
-    margin: 20px;
+    margin: 60px 20px;
   }
 
   &__title {
@@ -704,6 +703,7 @@ main {
 
   &__titleBox {
     text-align: center;
+    margin: 0 0 40px;
   }
 
   &__title {
@@ -722,11 +722,11 @@ main {
 
   &__icon {
     width: 10%;
-    padding: 12px 32px;
+    padding: 0 30px 40px;
 
     @include sp {
       width: 50px;
-      padding: 12px;
+      padding: 0 12px 40px;
     }
   }
 
@@ -1081,11 +1081,11 @@ main {
   @include pc {
     display: flex;
     gap: 60px;
-    padding: 100px 20px;
+    padding: 80px 50px;
   }
 
   @include sp {
-    padding: 100px 28px;
+    padding: 60px 20px;
   }
 
   &__leftBox {
@@ -1256,13 +1256,15 @@ main {
   }
 
   &__spMore {
-    display: block;
-    text-decoration: none;
-    font-size: 12px;
-    color: #000;
-    text-align: center;
-    border: 1px solid #000000;
-    padding: 12px 0;
+    @include sp {
+      display: block;
+      text-decoration: none;
+      font-size: 12px;
+      color: #000;
+      text-align: center;
+      border: 1px solid #000000;
+      padding: 12px 0;
+    }
   }
 
   &__spMore span {
@@ -1276,10 +1278,11 @@ main {
 }
 
 .p-shopList {
-  margin: 54px 24px;
-  border-top: 1px solid #d2d2d2;
-  border-bottom: 1px solid #d2d2d2;
-  padding: 54px 0;
+  margin: 80px 20px;
+
+  @include sp {
+    margin: 60px 20px;
+  }
 
   &__titleBox {
     text-align: center;
@@ -1353,11 +1356,16 @@ main {
 }
 
 .p-project {
-  padding: 90px 24px;
+  padding: 80px 50px;
   background: url(../../assets/img/header-color.jpg);
+
+  @include sp {
+    padding: 60px 20px;
+  }
 
   &__textBox {
     text-align: center;
+    margin: 0;
   }
 
   &__title {
@@ -1376,10 +1384,13 @@ main {
 
   &__article {
     padding-inline-start: 0;
+    margin: 0;
 
     @include pc {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 2vw;
+      margin: 40px 0 0;
     }
   }
 
@@ -1398,7 +1409,7 @@ main {
   &__article li {
     list-style-type: none;
     position: relative;
-    margin: 30px 12px;
+    margin-top: 20px;
   }
 
   &__article a {
@@ -1436,7 +1447,11 @@ main {
 }
 
 .p-guidance {
-  margin: 90px 16px;
+  margin: 80px 50px;
+
+  @include sp {
+    margin: 60px 20px;
+  }
 
   &__list {
     padding-inline-start: 0;
@@ -1462,7 +1477,7 @@ main {
   &__list li {
     list-style-type: none;
     position: relative;
-    margin: 30px 12px;
+    margin-top: 20px;
   }
 
   &__list li a {
